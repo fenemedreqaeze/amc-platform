@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AMC Platform</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        .container { max-width: 800px; margin: 0 auto; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 AMC Platform - En Construction</h1>
+        <p>Plateforme de correction automatique de QCM</p>
+        <div id="status">Chargement...</div>
+    </div>
+    <script>
+        fetch('/api/health')
+            .then(r => r.json())
+            .then(data => {
+                document.getElementById('status').innerHTML = 
+                    '✅ Backend connecté: ' + data.status;
+            });
+    </script>
+</body>
+</html>
