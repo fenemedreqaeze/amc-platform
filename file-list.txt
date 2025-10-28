@@ -1,0 +1,8 @@
+./database/init.sql
+./frontend/Dockerfile
+./frontend/src/index.html
+./backend/Dockerfile
+./api/requirements.txt
+./api/Dockerfile
+./api/app.py
+./docker-compose.yml
