@@ -350,6 +350,19 @@
         updateQuestionStyles();
       });
     });
+    
+document.addEventListener('DOMContentLoaded', () => {
+  const subjectSel = document.getElementById('subject-select');
+  if (subjectSel) {
+    currentSubject = subjectSel.value || 'other';
+    subjectSel.addEventListener('change', () => {
+      currentSubject = subjectSel.value || 'other';
+      // (optionnel) adapter le thème/classe CSS selon la matière ici
+    });
+  }
+});
+
+
   </script>
 </body>
 </html>
