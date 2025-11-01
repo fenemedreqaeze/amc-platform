@@ -17,6 +17,15 @@
       --danger: #ef4444;     /* red-500 */
       --danger-600: #dc2626; /* red-600 */
       --shadow: rgba(0,0,0,.35);
+      
+      /* Couleurs par matière */
+      --maths: #e74c3c;      /* Rouge */
+      --french: #3498db;     /* Bleu */
+      --english: #9b59b6;    /* Violet */
+      --history: #e67e22;    /* Orange */
+      --geography: #27ae60;  /* Vert */
+      --science: #f39c12;    /* Jaune */
+      --other: #95a5a6;      /* Gris */
     }
 
     html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, sans-serif; }
@@ -26,6 +35,39 @@
     h1 { font-size: 28px; font-weight: 700; margin: 0 0 20px; letter-spacing: .3px; }
     h3 { margin: 0 0 12px; font-size: 18px; }
 
+    .exam-header {
+      background: var(--card);
+      border: 1px solid var(--muted);
+      border-radius: 14px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 6px 20px var(--shadow);
+    }
+
+    .exam-meta {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .exam-meta label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: 600;
+      color: var(--soft);
+    }
+
+    select {
+      width: 100%;
+      background: #0b1220;
+      color: var(--text);
+      border: 1px solid var(--muted);
+      border-radius: 10px;
+      padding: 10px 12px;
+      outline: none;
+    }
+
     .question-card {
       background: var(--card);
       border: 1px solid var(--muted);
@@ -33,9 +75,19 @@
       padding: 16px;
       margin: 16px 0;
       box-shadow: 0 6px 20px var(--shadow);
+      transition: border-color 0.3s ease;
     }
 
-    textarea {
+    /* Styles par matière */
+    .subject-maths { border-left: 4px solid var(--maths); }
+    .subject-french { border-left: 4px solid var(--french); }
+    .subject-english { border-left: 4px solid var(--english); }
+    .subject-history { border-left: 4px solid var(--history); }
+    .subject-geography { border-left: 4px solid var(--geography); }
+    .subject-science { border-left: 4px solid var(--science); }
+    .subject-other { border-left: 4px solid var(--other); }
+
+    textarea, input[type="text"] {
       width: 100%;
       resize: vertical;
       background: #0b1220;
@@ -97,6 +149,35 @@
   <div class="container">
     <h1>Créateur d'examen</h1>
 
+    <!-- En-tête de l'examen avec métadonnées -->
+    <div class="exam-header">
+      <input type="text" placeholder="Titre de l'examen" style="font-size: 1.3em; font-weight: bold; background: transparent; border: none; color: var(--text); outline: none; width: 100%;">
+      <textarea placeholder="Description de l'examen..." rows="2" style="margin-top: 10px;"></textarea>
+      
+      <div class="exam-meta">
+        <div>
+          <label for="subject-select">📚 Matière</label>
+          <select id="subject-select">
+            <option value="maths">📐 Mathématiques</option>
+            <option value="french">📖 Français</option>
+            <option value="english">🔤 Anglais</option>
+            <option value="history">🏛️ Histoire</option>
+            <option value="geography">🌍 Géographie</option>
+            <option value="science">🔬 Sciences</option>
+            <option value="other">📚 Autre matière</option>
+          </select>
+        </div>
+        <div>
+          <label for="exam-difficulty">🎯 Niveau</label>
+          <select id="exam-difficulty">
+            <option value="easy">🟢 Facile</option>
+            <option value="medium">🟡 Moyen</option>
+            <option value="hard">🔴 Difficile</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
     <div id="questions-container"></div>
 
     <!-- Boutons d'action -->
@@ -111,13 +192,23 @@
 
   <script>
     let questionCount = 0;
+    let currentSubject = 'maths';
+
+    function updateQuestionStyles() {
+      document.querySelectorAll('.question-card').forEach(card => {
+        // Retirer toutes les classes de matière
+        card.classList.remove('subject-maths', 'subject-french', 'subject-english', 'subject-history', 'subject-geography', 'subject-science', 'subject-other');
+        // Ajouter la classe de matière actuelle
+        card.classList.add(`subject-${currentSubject}`);
+      });
+    }
 
     function addQuestion() {
       questionCount++;
       const questionsContainer = document.getElementById('questions-container');
 
       const questionDiv = document.createElement('div');
-      questionDiv.className = 'question-card';
+      questionDiv.className = `question-card subject-${currentSubject}`;
       questionDiv.id = `question-${questionCount}`;
       questionDiv.innerHTML = `
         <h3>Question ${questionCount}</h3>
@@ -215,8 +306,20 @@
     }
 
     function saveExam() {
+      const subject = document.getElementById('subject-select');
+      const difficulty = document.getElementById('exam-difficulty');
+      const title = document.querySelector('input[placeholder*="Titre"]').value || 'Sans titre';
+      const subjectText = subject.options[subject.selectedIndex].text;
+      const difficultyText = difficulty.options[difficulty.selectedIndex].text;
+      
       // Esquisse de sérialisation (pour plus tard)
-      const payload = { questions: [] };
+      const payload = { 
+        title,
+        subject: currentSubject,
+        difficulty: difficulty.value,
+        questions: [] 
+      };
+      
       document.querySelectorAll('.question-card').forEach((qCard, idx) => {
         const statement = qCard.querySelector('textarea')?.value || '';
         const answers = [];
@@ -229,19 +332,23 @@
         payload.questions.push({ statement, answers, correctIndex });
       });
 
-      // Pour l'instant, simple aperçu
-      alert('🎉 Examen sauvegardé (aperçu JSON dans la console).');
+      alert(`🎉 Examen "${title}" sauvegardé !\n📚 Matière: ${subjectText}\n🎯 Niveau: ${difficultyText}`);
       console.log('Exam payload =>', payload);
     }
 
     function goBack() {
-      // Adapte si besoin selon ton routage
       window.location.href = '/';
     }
 
     // Démarrage quand le DOM est prêt
     document.addEventListener('DOMContentLoaded', () => {
       addQuestion();
+      
+      // Gérer le changement de matière
+      document.getElementById('subject-select').addEventListener('change', function(e) {
+        currentSubject = e.target.value;
+        updateQuestionStyles();
+      });
     });
   </script>
 </body>
