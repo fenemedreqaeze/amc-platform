@@ -1,56 +1,33 @@
-version: '3.8'
-
+version: "3.9"
 services:
-  database:
-    image: postgres:15
-    environment:
-      POSTGRES_DB: amc
-      POSTGRES_USER: amcuser
-      POSTGRES_PASSWORD: amcpassword
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
-      - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql
-    networks:
-      - amc-network
-
-  amc-backend:
-    build: ./backend
-    ports:
-      - "8080:80"
-    volumes:
-      - ./data/subjects:/var/www/html/subjects
-      - ./data/copies:/var/www/html/copies
-      - ./data/corrections:/var/www/html/corrections
-      - ./data/export:/var/www/html/export
-    depends_on:
-      - database
-    networks:
-      - amc-network
-
-  amc-api:
+  api:
     build: ./api
-    ports:
-      - "5000:5000"
+    container_name: amc-api
+    environment:
+      - AMC_DATA_DIR=/amc/data
+      - CORS_ORIGINS=*
+      # ------ (optionnel Stripe en dev) ------
+      # - STRIPE_SECRET_KEY=sk_test_xxx
+      # - STRIPE_PRICE_ID_PRO=price_xxx
+      # - STRIPE_WEBHOOK_SECRET=whsec_xxx
+      # - SUCCESS_URL=https://example.com/success
+      # - CANCEL_URL=https://example.com/cancel
     volumes:
-      - ./data:/app/data
-    depends_on:
-      - database
-      - amc-backend
-    networks:
-      - amc-network
+      - ./data:/amc/data
+    ports:
+      - "8000:8000"
+    networks: [web]
 
-  amc-frontend:
+  frontend:
     build: ./frontend
+    container_name: amc-frontend
+    # Expose 3000 côté Codespaces, mappé vers 80 du conteneur Nginx
     ports:
       - "3000:80"
     depends_on:
-      - amc-api
-    networks:
-      - amc-network
-
-volumes:
-  postgres_data:
+      - api
+    networks: [web]
 
 networks:
-  amc-network:
-    driver: bridge
+  web:
+    external: false
