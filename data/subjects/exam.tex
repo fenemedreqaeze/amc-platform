@@ -1,0 +1,36 @@
+\documentclass[a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{automultiplechoice}
+
+\begin{document}
+\AMCrandomseed{12345}
+
+% --- 1 copie pour le test (tu pourras demander n copies côté API) ---
+\onecopy{1}{
+  \begin{center}\Large\bfseries Quiz démo AMC\end{center}
+  \bigskip
+
+  \begin{question}{q1}
+  $2+2 =$ ?
+  \begin{choices}
+    \correctchoice{4}
+    \wrongchoice{3}
+    \wrongchoice{5}
+  \end{choices}
+  \end{question}
+
+  \begin{question}{q2}
+  Capitale de la France ?
+  \begin{choices}
+    \correctchoice{Paris}
+    \wrongchoice{Lyon}
+    \wrongchoice{Berlin}
+  \end{choices}
+  \end{question}
+
+  % Feuille de réponses
+  \AMCform
+}
+\end{document}
