@@ -75,22 +75,17 @@ async def prepare(project_id: str, tex_filename: str = Form(...), n_copies: int 
 async def compile_pdf(project_id: str):
     proj_dir = os.path.join(AMC_DATA_DIR, project_id)
     
-    # CORRECTION : Utiliser xelatex directement sur le fichier filtré
-    tex_file = "test-exam_filtered.tex"  # Le fichier généré par AMC prepare
-    tex_path = os.path.join(proj_dir, tex_file)
-    
-    if not os.path.exists(tex_path):
-        raise HTTPException(400, "Fichier LaTeX filtré non trouvé")
-    
-    # Compiler avec xelatex
-    log = run(f"xelatex -interaction=nonstopmode {tex_file}", cwd=proj_dir)
+    # CORRECTION : Compiler SANS l'extension .tex
+    log = run(f"xelatex -interaction=nonstopmode test-exam_filtered", cwd=proj_dir)
     
     # Vérifier si le PDF a été créé
     pdf_path = os.path.join(proj_dir, "test-exam_filtered.pdf")
     if os.path.exists(pdf_path):
         return JSONResponse({"log": log, "pdf_created": True})
     else:
-        raise HTTPException(500, "Échec de la compilation PDF: " + log)
+        # Si pas de PDF, vérifier les fichiers générés
+        all_files = "\n".join(os.listdir(proj_dir))
+        raise HTTPException(500, f"PDF non généré. Fichiers présents:\n{all_files}")
 
 @app.get("/projects/{project_id}/pdf/{name}")
 async def get_pdf(project_id: str, name: str):
