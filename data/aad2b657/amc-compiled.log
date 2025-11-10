@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2025/dev/Debian) (preloaded format=xelatex 2025.11.10)  10 NOV 2025 22:39
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2025/dev/Debian) (preloaded format=xelatex 2025.11.10)  10 NOV 2025 22:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -688,7 +688,7 @@ Package fontspec Info:
 ;"
 
 
-No file amc-compiled.aux.
+(./amc-compiled.aux)
 \openout1 = `amc-compiled.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 6.
@@ -776,6 +776,7 @@ LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 \AMC@ovalbox@RF=\box110
 \AMC@ovalbox@=\box111
 \AMC@ovalbox@F=\box112
+
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
 *geometry* verbose mode - [ preamble ] result:
@@ -811,301 +812,11 @@ LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 
-AMC:copies:total=3
+AMC:copies:total=1
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 31.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 31.
-! Missing number, treated as zero.
-<to be read again> 
-                   \grB@k 
-l.31 }
-      
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-! Missing number, treated as zero.
-<to be read again> 
-                   \grB@k 
-l.31 }
-      
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-! Missing number, treated as zero.
-<to be read again> 
-                   \grB@k 
-l.31 }
-      
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-! Missing number, treated as zero.
-<to be read again> 
-                   \AMCgrB@j 
-l.31 }
-      
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-! Missing number, treated as zero.
-<to be read again> 
-                   \grB@k 
-l.31 }
-      
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-
-! Package automultiplechoice Error: No group mode for grB.
-
-See the automultiplechoice package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.31 }
-      
-No mode has been defined for group 'grB'. This should not occur...
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \AMCgrB@mode 
-l.31 }
-      
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Extra \endcsname.
-\AMCgroup@pre ...\csname AMCgrouppre@#1\endcsname 
-                                                  {#2}{#3}{#4}
-l.31 }
-      
-I'm ignoring this, since I wasn't doing a \csname.
-
-! You can't use `\relax' after \advance.
-<recently read> \AMCgrB@j 
-                          
-l.31 }
-      
-I'm forgetting what you said and not changing anything.
-
-Missing character: There is no ^^A (U+0001) in font Linux Libertine O/OT:script
-=latn;language=dflt;mapping=tex-text;!
-! Missing number, treated as zero.
-<to be read again> 
-                   \AMCgrB@j 
-l.31 }
-      
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-! Missing = inserted for \ifnum.
-<to be read again> 
-                   \AMCgrB@j 
-l.31 }
-      
-I was expecting to see `<', `=', or `>'. Didn't.
-
-! Missing number, treated as zero.
-<to be read again> 
-                   \AMCgrB@j 
-l.31 }
-      
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-! Missing number, treated as zero.
-<to be read again> 
-                   \relax 
-l.31 }
-      
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-! You can't use a prefix with `the character ='.
-<to be read again> 
-                   =
-l.31 }
-      
-I'll pretend you didn't say \long or \outer or \global or \protected.
-
-Missing character: There is no ^^A (U+0001) in font Linux Libertine O/OT:script
-=latn;language=dflt;mapping=tex-text;!
-! Missing number, treated as zero.
-<to be read again> 
-                   \AMCgrB@j 
-l.31 }
-      
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-! You can't use `\relax' after \the.
-<recently read> \grB@ 
-                      
-l.31 }
-      
-I'm forgetting what you said and using zero instead.
-
-
-
-[1
-
-] 
-AMC:copies:add=1
-! Missing number, treated as zero.
-<to be read again> 
-                   \grB@k 
-l.31 }
-      
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-! Missing number, treated as zero.
-<to be read again> 
-                   \grB@k 
-l.31 }
-      
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-! Missing number, treated as zero.
-<to be read again> 
-                   \grB@k 
-l.31 }
-      
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-! Missing number, treated as zero.
-<to be read again> 
-                   \AMCgrB@j 
-l.31 }
-      
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-! Missing number, treated as zero.
-<to be read again> 
-                   \grB@k 
-l.31 }
-      
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-
-! Package automultiplechoice Error: No group mode for grB.
-
-See the automultiplechoice package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.31 }
-      
-No mode has been defined for group 'grB'. This should not occur...
-
-! Missing \endcsname inserted.
-<to be read again> 
-                   \AMCgrB@mode 
-l.31 }
-      
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-! Extra \endcsname.
-\AMCgroup@pre ...\csname AMCgrouppre@#1\endcsname 
-                                                  {#2}{#3}{#4}
-l.31 }
-      
-I'm ignoring this, since I wasn't doing a \csname.
-
-! You can't use `\relax' after \advance.
-<recently read> \AMCgrB@j 
-                          
-l.31 }
-      
-I'm forgetting what you said and not changing anything.
-
-Missing character: There is no ^^A (U+0001) in font Linux Libertine O/OT:script
-=latn;language=dflt;mapping=tex-text;!
-! Missing number, treated as zero.
-<to be read again> 
-                   \AMCgrB@j 
-l.31 }
-      
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-! Missing = inserted for \ifnum.
-<to be read again> 
-                   \AMCgrB@j 
-l.31 }
-      
-I was expecting to see `<', `=', or `>'. Didn't.
-
-! Missing number, treated as zero.
-<to be read again> 
-                   \AMCgrB@j 
-l.31 }
-      
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-! Missing number, treated as zero.
-<to be read again> 
-                   \relax 
-l.31 }
-      
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-! You can't use a prefix with `the character ='.
-<to be read again> 
-                   =
-l.31 }
-      
-I'll pretend you didn't say \long or \outer or \global or \protected.
-
-Missing character: There is no ^^A (U+0001) in font Linux Libertine O/OT:script
-=latn;language=dflt;mapping=tex-text;!
-! Missing number, treated as zero.
-<to be read again> 
-                   \AMCgrB@j 
-l.31 }
-      
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-! You can't use `\relax' after \the.
-<recently read> \grB@ 
-                      
-l.31 }
-      
-I'm forgetting what you said and using zero instead.
-
-
-
-[1
-
-] 
-AMC:copies:add=1
 ! Missing number, treated as zero.
 <to be read again> 
                    \grB@k 
@@ -1258,12 +969,12 @@ L3 programming layer <2025-01-18>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 8672 strings out of 475825
- 203077 string characters out of 5774301
- 650015 words of memory out of 5000000
- 31503 multiletter control sequences out of 15000+600000
+ 8675 strings out of 475825
+ 203140 string characters out of 5774301
+ 650006 words of memory out of 5000000
+ 31504 multiletter control sequences out of 15000+600000
  559364 words of font info for 52 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  94i,23n,107p,341b,658s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on amc-compiled.pdf (3 pages).
+Output written on amc-compiled.pdf (1 page).

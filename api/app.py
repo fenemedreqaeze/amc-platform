@@ -38,6 +38,8 @@ async def create_project(project_id: str | None = Form(None)):
     pid = project_id or uuid.uuid4().hex[:8]
     proj_dir = os.path.join(AMC_DATA_DIR, pid)
     os.makedirs(proj_dir, exist_ok=True)
+    # Donner les permissions dès la création
+    os.chmod(proj_dir, 0o777)
     return {"project_id": pid}
 
 @app.post("/projects/{project_id}/source")
@@ -57,9 +59,14 @@ async def prepare(project_id: str, tex_filename: str = Form(...), n_copies: int 
     if not os.path.exists(tex_path):
         raise HTTPException(400, "tex not found")
     
-    # CRÉER LES SOUS-DOSSIERS AMC AVANT L'EXÉCUTION
-    data_dir = os.path.join(proj_dir, tex_filename.replace('.tex', '-data'))
+    # CRÉER TOUS LES DOSSIERS AVEC PERMISSIONS
+    data_dir = os.path.join(proj_dir, "data")
     os.makedirs(data_dir, exist_ok=True)
+    os.chmod(data_dir, 0o777)
+    
+    amc_data_dir = os.path.join(proj_dir, tex_filename.replace('.tex', '-data'))
+    os.makedirs(amc_data_dir, exist_ok=True)
+    os.chmod(amc_data_dir, 0o777)
     
     log = run(f"{AMC_BIN} prepare --project {proj_dir} --with pdflatex --n-copies {n_copies} --filter plain --source {tex_path}")
     return JSONResponse({"log": log})
@@ -67,16 +74,36 @@ async def prepare(project_id: str, tex_filename: str = Form(...), n_copies: int 
 @app.post("/projects/{project_id}/compile")
 async def compile_pdf(project_id: str):
     proj_dir = os.path.join(AMC_DATA_DIR, project_id)
-    # CORRECTION : Utiliser 'noted' au lieu de 'latex'
-    log = run(f"{AMC_BIN} noted --project {proj_dir} --data export --filter plain")
-    return JSONResponse({"log": log})
+    
+    # CORRECTION : Utiliser xelatex directement sur le fichier filtré
+    tex_file = "test-exam_filtered.tex"  # Le fichier généré par AMC prepare
+    tex_path = os.path.join(proj_dir, tex_file)
+    
+    if not os.path.exists(tex_path):
+        raise HTTPException(400, "Fichier LaTeX filtré non trouvé")
+    
+    # Compiler avec xelatex
+    log = run(f"xelatex -interaction=nonstopmode {tex_file}", cwd=proj_dir)
+    
+    # Vérifier si le PDF a été créé
+    pdf_path = os.path.join(proj_dir, "test-exam_filtered.pdf")
+    if os.path.exists(pdf_path):
+        return JSONResponse({"log": log, "pdf_created": True})
+    else:
+        raise HTTPException(500, "Échec de la compilation PDF: " + log)
 
 @app.get("/projects/{project_id}/pdf/{name}")
 async def get_pdf(project_id: str, name: str):
     proj_dir = os.path.join(AMC_DATA_DIR, project_id)
-    pdf_path = os.path.join(proj_dir, name)
-    if not (os.path.exists(pdf_path) and name.endswith(".pdf")):
-        raise HTTPException(404, "pdf not found")
+    
+    # Si name est "calage.pdf", servir le PDF compilé
+    if name == "calage.pdf":
+        pdf_path = os.path.join(proj_dir, "test-exam_filtered.pdf")
+    else:
+        pdf_path = os.path.join(proj_dir, name)
+        
+    if not (os.path.exists(pdf_path) and pdf_path.endswith(".pdf")):
+        raise HTTPException(404, "PDF non trouvé")
     return FileResponse(pdf_path, media_type="application/pdf")
 
 @app.post("/projects/{project_id}/scans")
@@ -84,6 +111,7 @@ async def upload_scans(project_id: str, scans: list[UploadFile] = File(...)):
     proj_dir = os.path.join(AMC_DATA_DIR, project_id)
     scans_dir = os.path.join(proj_dir, "scans")
     os.makedirs(scans_dir, exist_ok=True)
+    os.chmod(scans_dir, 0o777)
     for uf in scans:
         dst = os.path.join(scans_dir, uf.filename)
         with open(dst, "wb") as f:

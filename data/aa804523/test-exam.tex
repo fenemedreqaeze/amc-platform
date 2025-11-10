@@ -1,0 +1,44 @@
+\documentclass[a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\usepackage[auto]{automultiplechoice}
+
+\begin{document}
+
+\element{general}{
+  \begin{question}{maths1}
+    Quelle est la solution de $2x + 3 = 11$ ?
+    \begin{choices}
+      \correctchoice{4}
+      \wrongchoice{5}
+      \wrongchoice{6}
+      \wrongchoice{7}
+    \end{choices}
+  \end{question}
+}
+
+\element{general}{
+  \begin{question}{francais1}
+    Quel est le pluriel de « cheval » ?
+    \begin{choices}
+      \wrongchoice{chevals}
+      \correctchoice{chevaux}
+      \wrongchoice{chevales}
+      \wrongchoice{chevauls}
+    \end{choices}
+  \end{question}
+}
+
+\onecopy{5}{
+  \noindent{\bf QCM Test \hfill TEST}
+
+  \vspace*{.5cm}
+  \begin{minipage}{.4\linewidth}
+    \centering\large\bf Test\\ Examen de démonstration
+  \end{minipage}
+
+  \vspace*{.5cm}
+  \insertgroup{general}
+}
+\end{document}

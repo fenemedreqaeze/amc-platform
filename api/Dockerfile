@@ -2,13 +2,14 @@ FROM python:3.11-slim
 
 WORKDIR /app
 
-# Mettre à jour les dépôts et installer AMC + LaTeX
+# Installer AMC + XeTeX + LaTeX complet
 RUN apt-get update && apt-get install -y \
     auto-multiple-choice \
     texlive-latex-base \
     texlive-latex-extra \
     texlive-lang-french \
     texlive-fonts-extra \
+    texlive-xetex \
     && rm -rf /var/lib/apt/lists/*
 
 COPY requirements.txt .
