@@ -187,6 +187,33 @@
       <button type="button" class="btn-primary" onclick="goBack()">← Retour à l'accueil</button>
     </div>
 
+    <!-- Section AMC - Génération LaTeX & PDF -->
+    <div class="exam-header" style="margin-top: 30px;">
+      <h3>🔄 Génération AMC</h3>
+      
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 15px;">
+        <div>
+          <label for="n-copies">Nombre de copies</label>
+          <input type="number" id="n-copies" value="1" min="1" style="width: 100%; padding: 10px 12px; border-radius: 10px; border: 1px solid var(--muted); background: #0b1220; color: var(--text);">
+        </div>
+        <div>
+          <label for="project-id">ID Projet</label>
+          <input type="text" id="project-id" readonly style="width: 100%; padding: 10px 12px; border-radius: 10px; border: 1px solid var(--muted); background: #0b1220; color: var(--soft);">
+        </div>
+      </div>
+
+      <div class="actions" style="margin-top: 20px;">
+        <button type="button" class="btn-primary" onclick="generateLaTeX()">📄 Générer le LaTeX</button>
+        <button type="button" class="btn-primary" onclick="prepareExam()">🔄 Préparer l'examen</button>
+        <button type="button" class="btn-primary" onclick="compilePDF()">📦 Compiler le PDF</button>
+        <button type="button" class="btn-success" onclick="downloadPDF()">⬇️ Télécharger PDF</button>
+      </div>
+
+      <div id="amc-status" style="margin-top: 15px; padding: 12px; border-radius: 10px; background: #0b1220; border: 1px solid var(--muted);"></div>
+    </div>
+
+
+
     <p class="note">Astuce : marque la bonne réponse en cochant le bouton radio correspondant. Tu peux ajouter/supprimer des réponses librement.</p>
   </div>
 
@@ -362,6 +389,192 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+// === INTÉGRATION AMC API ===
+let currentProjectId = null;
+
+// Créer un projet AMC
+async function createAMCProject() {
+    try {
+        showAMCStatus('🔄 Création du projet...', 'loading');
+        
+        const response = await fetch('/api/projects', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        });
+        
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        
+        const data = await response.json();
+        currentProjectId = data.project_id;
+        document.getElementById('project-id').value = currentProjectId;
+        showAMCStatus('✅ Projet créé: ' + currentProjectId, 'success');
+        return currentProjectId;
+        
+    } catch (error) {
+        showAMCStatus('❌ Erreur création projet: ' + error.message, 'error');
+        return null;
+    }
+}
+
+// Générer le code LaTeX à partir des questions
+function generateLaTeX() {
+    const title = document.querySelector('input[placeholder*="Titre"]').value || 'Examen Sans Titre';
+    const subject = document.getElementById('subject-select').options[document.getElementById('subject-select').selectedIndex].text;
+    
+    let latexContent = `\\documentclass[a4paper,11pt]{article}
+\\usepackage[utf8]{inputenc}
+\\usepackage[T1]{fontenc}
+\\usepackage[francais]{babel}
+\\usepackage{amc}
+
+\\title{${title}}
+\\author{${subject}}
+\\date{\\\\today}
+
+\\begin{document}
+\\maketitle
+
+\\begin{questions}`;
+
+    // Ajouter chaque question au LaTeX
+    document.querySelectorAll('.question-card').forEach((qCard, index) => {
+        const questionText = qCard.querySelector('textarea').value || `Question ${index + 1}`;
+        const answers = [];
+        let correctAnswerIndex = -1;
+        
+        // Récupérer les réponses et identifier la correcte
+        qCard.querySelectorAll('.answer-row').forEach((row, ansIndex) => {
+            const answerText = row.querySelector('input[type="text"]').value || `Réponse ${ansIndex + 1}`;
+            const isCorrect = row.querySelector('input[type="radio"]').checked;
+            answers.push(answerText);
+            if (isCorrect) correctAnswerIndex = ansIndex;
+        });
+
+        if (answers.length > 0 && correctAnswerIndex >= 0) {
+            latexContent += `\n\n\\question{${questionText}}`;
+            answers.forEach((answer, i) => {
+                if (i === correctAnswerIndex) {
+                    latexContent += `\n\\bonne{${answer}}`;
+                } else {
+                    latexContent += `\n\\mauvaise{${answer}}`;
+                }
+            });
+        }
+    });
+
+    latexContent += `\n\n\\end{questions}\n\\end{document}`;
+    
+    // Afficher le LaTeX généré
+    showAMCStatus('📄 LaTeX généré avec succès!', 'success');
+    console.log('LaTeX généré:', latexContent);
+    
+    // Télécharger le fichier .tex
+    downloadLaTeXFile(latexContent, title);
+    
+    return latexContent;
+}
+
+// Télécharger le fichier LaTeX
+function downloadLaTeXFile(content, title) {
+    const blob = new Blob([content], { type: 'text/plain' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `${title.replace(/[^a-z0-9]/gi, '_')}.tex`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+}
+
+// Upload et préparation de l'examen
+async function prepareExam() {
+    if (!currentProjectId) {
+        const projectId = await createAMCProject();
+        if (!projectId) return;
+    }
+    
+    showAMCStatus('🔄 Préparation de l\'examen...', 'loading');
+    
+    // Ici vous devrez uploader le fichier .tex généré
+    // Pour l'instant, on simule avec un fichier existant
+    try {
+        const nCopies = document.getElementById('n-copies').value || 1;
+        const response = await fetch(`/api/projects/${currentProjectId}/prepare`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                tex_filename: 'exam.tex', // À adapter
+                n_copies: parseInt(nCopies)
+            })
+        });
+        
+        const result = await response.json();
+        showAMCStatus('✅ Examen préparé! ' + result.log, 'success');
+        
+    } catch (error) {
+        showAMCStatus('❌ Erreur préparation: ' + error.message, 'error');
+    }
+}
+
+// Compiler le PDF
+async function compilePDF() {
+    if (!currentProjectId) {
+        showAMCStatus('❌ Créez d\'abord un projet', 'error');
+        return;
+    }
+    
+    showAMCStatus('🔄 Compilation PDF...', 'loading');
+    
+    try {
+        const response = await fetch(`/api/projects/${currentProjectId}/compile`, {
+            method: 'POST'
+        });
+        
+        const result = await response.json();
+        showAMCStatus('✅ PDF compilé! ' + result.log, 'success');
+        
+    } catch (error) {
+        showAMCStatus('❌ Erreur compilation: ' + error.message, 'error');
+    }
+}
+
+// Télécharger le PDF
+async function downloadPDF() {
+    if (!currentProjectId) {
+        showAMCStatus('❌ Aucun projet actif', 'error');
+        return;
+    }
+    
+    try {
+        // Ouvrir le PDF dans un nouvel onglet
+        window.open(`/api/projects/${currentProjectId}/pdf/calage.pdf`, '_blank');
+        showAMCStatus('📄 Ouverture du PDF...', 'success');
+        
+    } catch (error) {
+        showAMCStatus('❌ Erreur téléchargement: ' + error.message, 'error');
+    }
+}
+
+// Afficher le statut AMC
+function showAMCStatus(message, type = 'info') {
+    const statusEl = document.getElementById('amc-status');
+    statusEl.textContent = message;
+    statusEl.style.color = 
+        type === 'success' ? 'var(--success)' :
+        type === 'error' ? 'var(--danger)' :
+        type === 'loading' ? 'var(--primary)' : 'var(--text)';
+}
+
+// Initialisation au chargement
+document.addEventListener('DOMContentLoaded', function() {
+    // Créer un projet AMC au démarrage
+    setTimeout(() => createAMCProject(), 1000);
+});
 
   </script>
 </body>
