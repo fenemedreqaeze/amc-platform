@@ -56,13 +56,19 @@ async def prepare(project_id: str, tex_filename: str = Form(...), n_copies: int 
     tex_path = os.path.join(proj_dir, tex_filename)
     if not os.path.exists(tex_path):
         raise HTTPException(400, "tex not found")
+    
+    # CRÉER LES SOUS-DOSSIERS AMC AVANT L'EXÉCUTION
+    data_dir = os.path.join(proj_dir, tex_filename.replace('.tex', '-data'))
+    os.makedirs(data_dir, exist_ok=True)
+    
     log = run(f"{AMC_BIN} prepare --project {proj_dir} --with pdflatex --n-copies {n_copies} --filter plain --source {tex_path}")
     return JSONResponse({"log": log})
 
 @app.post("/projects/{project_id}/compile")
 async def compile_pdf(project_id: str):
     proj_dir = os.path.join(AMC_DATA_DIR, project_id)
-    log = run(f"{AMC_BIN} latex --project {proj_dir} --filter plain")
+    # CORRECTION : Utiliser 'noted' au lieu de 'latex'
+    log = run(f"{AMC_BIN} noted --project {proj_dir} --data export --filter plain")
     return JSONResponse({"log": log})
 
 @app.get("/projects/{project_id}/pdf/{name}")

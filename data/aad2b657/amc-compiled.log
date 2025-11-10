@@ -1,0 +1,1269 @@
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2025/dev/Debian) (preloaded format=xelatex 2025.11.10)  10 NOV 2025 22:39
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**test-exam_filtered.tex
+(./test-exam_filtered.tex
+LaTeX2e <2024-11-01> patch level 2
+L3 programming layer <2025-01-18>
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2024/06/29 v1.4n Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2024/06/29 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count192
+\c@section=\count193
+\c@subsection=\count194
+\c@subsubsection=\count195
+\c@paragraph=\count196
+\c@subparagraph=\count197
+\c@figure=\count198
+\c@table=\count199
+\abovecaptionskip=\skip49
+\belowcaptionskip=\skip50
+\bibindent=\dimen141
+)
+(/usr/share/texlive/texmf-dist/tex/xelatex/xltxtra/xltxtra.sty
+Package: xltxtra 2018/12/31 v0.7 Improvements for the "XeLaTeX" format
+
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifluatex.sty
+Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
+
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2024/12/12 v1.0g TeX engine tests
+))
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifxetex.sty
+Package: ifxetex 2019/10/25 v0.7 ifxetex legacy package. Use iftex instead.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/fontspec/fontspec.sty
+(/usr/share/texlive/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
+(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2025-01-18 L3 programming layer (loader) 
+
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-xetex.def
+File: l3backend-xetex.def 2024-05-08 L3 backend support: XeTeX
+\g__graphics_track_int=\count266
+\l__pdf_internal_box=\box52
+\g__pdf_backend_annotation_int=\count267
+\g__pdf_backend_link_int=\count268
+))
+Package: xparse 2024-08-16 L3 Experimental document command parser
+)
+Package: fontspec 2024/05/11 v2.9e Font selection for XeLaTeX and LuaLaTeX
+
+(/usr/share/texlive/texmf-dist/tex/latex/fontspec/fontspec-xetex.sty
+Package: fontspec-xetex 2024/05/11 v2.9e Font selection for XeLaTeX and LuaLaTe
+X
+\l__fontspec_script_int=\count269
+\l__fontspec_language_int=\count270
+\l__fontspec_strnum_int=\count271
+\l__fontspec_tmp_int=\count272
+\l__fontspec_tmpa_int=\count273
+\l__fontspec_tmpb_int=\count274
+\l__fontspec_tmpc_int=\count275
+\l__fontspec_em_int=\count276
+\l__fontspec_emdef_int=\count277
+\l__fontspec_strong_int=\count278
+\l__fontspec_strongdef_int=\count279
+\l__fontspec_tmpa_dim=\dimen142
+\l__fontspec_tmpb_dim=\dimen143
+\l__fontspec_tmpc_dim=\dimen144
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
+)
+(/usr/share/texlive/texmf-dist/tex/latex/fontspec/fontspec.cfg)))
+(/usr/share/texlive/texmf-dist/tex/latex/realscripts/realscripts.sty
+Package: realscripts 2016/02/13 v0.3d Access OpenType subscripts and superscrip
+ts
+\subsupersep=\dimen145
+)
+(/usr/share/texlive/texmf-dist/tex/latex/metalogo/metalogo.sty
+Package: metalogo 2010/05/29 v0.12 Extended TeX logo macros
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks17
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2024/08/06 v1.4g Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: xetex.def on input line 106.
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/xetex.def
+File: xetex.def 2022/09/22 v5.0n Graphics/color driver for xetex
+))
+\Gin@req@height=\dimen146
+\Gin@req@width=\dimen147
+)
+\xl@everylogo=\toks18
+\xl@@everylogo=\toks19
+LaTeX Info: Redefining \TeX on input line 193.
+LaTeX Info: Redefining \LaTeX on input line 202.
+LaTeX Info: Redefining \LaTeXe on input line 219.
+)
+\l__xetex_show_hyphens_wrapping_box=\box53
+\l__xetex_show_hyphens_temp_box=\box54
+\l__xetex_show_hyphens_final_box=\box55
+\g__xetex_show_hyphens_word_box=\box56
+)
+(/usr/share/texmf/tex/latex/AMC/automultiplechoice.sty
+AMC version: 2025/04/17 v1.7.0 r:ec7413fa
+Package: automultiplechoice 2025/04/17 v1.7.0 r:ec7413fa
+(/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: xetex.def on input line 274.
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1349.
+Package xcolor Info: Model `RGB' extended on input line 1365.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1367.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1370.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1371.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
+
+\f@nch@headwidth=\skip51
+\f@nch@offset@elh=\skip52
+\f@nch@offset@erh=\skip53
+\f@nch@offset@olh=\skip54
+\f@nch@offset@orh=\skip55
+\f@nch@offset@elf=\skip56
+\f@nch@offset@erf=\skip57
+\f@nch@offset@olf=\skip58
+\f@nch@offset@orf=\skip59
+\f@nch@height=\skip60
+\f@nch@footalignment=\skip61
+\f@nch@widthL=\skip62
+\f@nch@widthC=\skip63
+\f@nch@widthR=\skip64
+\@temptokenb=\toks20
+)
+(/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
+
+(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks21
+\XKV@tempa@toks=\toks22
+)
+\XKV@depth=\count280
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+))
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/rotating.sty
+Package: rotating 2016/08/11 v2.16d rotated objects in LaTeX
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
+)
+\c@r@tfl@t=\count281
+\rotFPtop=\skip65
+\rotFPbot=\skip66
+\rot@float@box=\box57
+\rot@mess@toks=\toks23
+)
+(/usr/share/texlive/texmf-dist/tex/latex/fancybox/fancybox.sty
+Package: fancybox 2010/05/15 1.4
+
+Style option: `fancybox' v1.4 <2010/05/15> (tvz)
+\@fancybox=\box58
+\shadowsize=\dimen148
+\@Sbox=\box59
+\do@VerbBox=\toks24
+\the@fancyput=\toks25
+\this@fancyput=\toks26
+\EndVerbatimTokens=\toks27
+\Verbatim@Outfile=\write3
+\Verbatim@Infile=\read2
+) (/usr/share/texlive/texmf-dist/tex/latex/csvsimple/csvsimple.sty
+Package: csvsimple 2024/09/27 v2.7.0 LaTeX CSV file processing
+)
+(/usr/share/texlive/texmf-dist/tex/latex/csvsimple/csvsimple-legacy.sty
+Package: csvsimple-legacy 2024/09/27 version 2.7.0 LaTeX2e CSV file processing
+
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
+\pgfutil@everybye=\toks28
+\pgfutil@tempdima=\dimen149
+\pgfutil@tempdimb=\dimen150
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+\pgfutil@abb=\box60
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/pgf.revision.tex)
+Package: pgfrcs 2023-01-15 v3.1.10 (3.1.10)
+))
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks29
+\pgfkeys@temptoks=\toks30
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeyslibraryfiltered
+.code.tex
+\pgfkeys@tmptoks=\toks31
+))) (/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2025/02/11 v2.5l e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count282
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/shellesc.sty
+Package: shellesc 2023/07/08 v1.0d unified shell escape interface for LaTeX
+Package shellesc Info: Restricted shell escape enabled on input line 77.
+)
+\csv@file=\read3
+\c@csvinputline=\count283
+\c@csvrow=\count284
+\c@csvcol=\count285
+\csv@out=\write4
+)
+(/usr/share/texlive/texmf-dist/tex/latex/environ/environ.sty
+Package: environ 2014/05/04 v0.3 A new way to define environments
+
+(/usr/share/texlive/texmf-dist/tex/latex/trimspaces/trimspaces.sty
+Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
+)
+\@envbody=\toks32
+)
+Loading configuration file...
+(./amc-compiled-config.tex)
+\AMC@logfile=\write5
+\openout5 = `amc-compiled.amc'.
+
+\AMCload@counter=\count286
+\AMCid@quest=\count287
+\AMCid@check=\count288
+\AMCid@etud=\count289
+\AMCid@etudstart=\count290
+\AMCid@etudfin=\count291
+\AMCnum@copies=\count292
+\AMCformVSpace=\dimen151
+\AMCformHSpace=\dimen152
+\AMCinterIrep=\dimen153
+\AMCinterBrep=\dimen154
+\AMCinterIquest=\dimen155
+\AMCinterBquest=\dimen156
+\AMCpostNquest=\dimen157
+\AMCpostOquest=\dimen158
+\AMCids@width=\dimen159
+\AMCids@height=\dimen160
+\AMC@SR=\count293
+\AMC@SR@count=\count294
+\AMC@SRnum=\count295
+\AMC@sti=\count296
+\AMC@stil=\count297
+\AMCsw@p@=\toks33
+\AMC@numerotation=\count298
+\AMC@smashbox=\box61
+\AMC@smashboxheight=\dimen161
+\c@AMC@ncase=\count299
+\AMC@boxedrule=\skip67
+\AMC@crossrule=\skip68
+\AMC@boxeddown=\skip69
+\AMC@boxedwidth=\skip70
+\AMC@boxedheight=\skip71
+\AMC@oval@radius=\skip72
+\AMC@outside@sep=\skip73
+\AMC@CBtaille=\skip74
+\AMCbin@sequence=\toks34
+\AMCbin@number=\count300
+\AMCbin@digit=\count301
+\AMCbin@id=\count302
+\AMCbin@did=\count303
+\AMCbin@ndigits=\count304
+\AMCbin@hsep=\dimen162
+\AMCtok@k=\count305
+\AMCtok@max=\count306
+\AMCtok@size=\count307
+\AMC@imax=\count308
+\AMCtok@ik=\count309
+\AMCloop@k=\count310
+\AMCrep@count=\count311
+\AMCrep@nn=\count312
+\AMCrep@nnmax=\count313
+\reponse@cxcix=\toks35
+\reponse@cxcviii=\toks36
+\reponse@cxcvii=\toks37
+\reponse@cxcvi=\toks38
+\reponse@cxcv=\toks39
+\reponse@cxciv=\toks40
+\reponse@cxciii=\toks41
+\reponse@cxcii=\toks42
+\reponse@cxci=\toks43
+\reponse@cxc=\toks44
+\reponse@clxxxix=\toks45
+\reponse@clxxxviii=\toks46
+\reponse@clxxxvii=\toks47
+\reponse@clxxxvi=\toks48
+\reponse@clxxxv=\toks49
+\reponse@clxxxiv=\toks50
+\reponse@clxxxiii=\toks51
+\reponse@clxxxii=\toks52
+\reponse@clxxxi=\toks53
+\reponse@clxxx=\toks54
+\reponse@clxxix=\toks55
+\reponse@clxxviii=\toks56
+\reponse@clxxvii=\toks57
+\reponse@clxxvi=\toks58
+\reponse@clxxv=\toks59
+\reponse@clxxiv=\toks60
+\reponse@clxxiii=\toks61
+\reponse@clxxii=\toks62
+\reponse@clxxi=\toks63
+\reponse@clxx=\toks64
+\reponse@clxix=\toks65
+\reponse@clxviii=\toks66
+\reponse@clxvii=\toks67
+\reponse@clxvi=\toks68
+\reponse@clxv=\toks69
+\reponse@clxiv=\toks70
+\reponse@clxiii=\toks71
+\reponse@clxii=\toks72
+\reponse@clxi=\toks73
+\reponse@clx=\toks74
+\reponse@clix=\toks75
+\reponse@clviii=\toks76
+\reponse@clvii=\toks77
+\reponse@clvi=\toks78
+\reponse@clv=\toks79
+\reponse@cliv=\toks80
+\reponse@cliii=\toks81
+\reponse@clii=\toks82
+\reponse@cli=\toks83
+\reponse@cl=\toks84
+\reponse@cxlix=\toks85
+\reponse@cxlviii=\toks86
+\reponse@cxlvii=\toks87
+\reponse@cxlvi=\toks88
+\reponse@cxlv=\toks89
+\reponse@cxliv=\toks90
+\reponse@cxliii=\toks91
+\reponse@cxlii=\toks92
+\reponse@cxli=\toks93
+\reponse@cxl=\toks94
+\reponse@cxxxix=\toks95
+\reponse@cxxxviii=\toks96
+\reponse@cxxxvii=\toks97
+\reponse@cxxxvi=\toks98
+\reponse@cxxxv=\toks99
+\reponse@cxxxiv=\toks100
+\reponse@cxxxiii=\toks101
+\reponse@cxxxii=\toks102
+\reponse@cxxxi=\toks103
+\reponse@cxxx=\toks104
+\reponse@cxxix=\toks105
+\reponse@cxxviii=\toks106
+\reponse@cxxvii=\toks107
+\reponse@cxxvi=\toks108
+\reponse@cxxv=\toks109
+\reponse@cxxiv=\toks110
+\reponse@cxxiii=\toks111
+\reponse@cxxii=\toks112
+\reponse@cxxi=\toks113
+\reponse@cxx=\toks114
+\reponse@cxix=\toks115
+\reponse@cxviii=\toks116
+\reponse@cxvii=\toks117
+\reponse@cxvi=\toks118
+\reponse@cxv=\toks119
+\reponse@cxiv=\toks120
+\reponse@cxiii=\toks121
+\reponse@cxii=\toks122
+\reponse@cxi=\toks123
+\reponse@cx=\toks124
+\reponse@cix=\toks125
+\reponse@cviii=\toks126
+\reponse@cvii=\toks127
+\reponse@cvi=\toks128
+\reponse@cv=\toks129
+\reponse@civ=\toks130
+\reponse@ciii=\toks131
+\reponse@cii=\toks132
+\reponse@ci=\toks133
+\reponse@c=\toks134
+\reponse@xcix=\toks135
+\reponse@xcviii=\toks136
+\reponse@xcvii=\toks137
+\reponse@xcvi=\toks138
+\reponse@xcv=\toks139
+\reponse@xciv=\toks140
+\reponse@xciii=\toks141
+\reponse@xcii=\toks142
+\reponse@xci=\toks143
+\reponse@xc=\toks144
+\reponse@lxxxix=\toks145
+\reponse@lxxxviii=\toks146
+\reponse@lxxxvii=\toks147
+\reponse@lxxxvi=\toks148
+\reponse@lxxxv=\toks149
+\reponse@lxxxiv=\toks150
+\reponse@lxxxiii=\toks151
+\reponse@lxxxii=\toks152
+\reponse@lxxxi=\toks153
+\reponse@lxxx=\toks154
+\reponse@lxxix=\toks155
+\reponse@lxxviii=\toks156
+\reponse@lxxvii=\toks157
+\reponse@lxxvi=\toks158
+\reponse@lxxv=\toks159
+\reponse@lxxiv=\toks160
+\reponse@lxxiii=\toks161
+\reponse@lxxii=\toks162
+\reponse@lxxi=\toks163
+\reponse@lxx=\toks164
+\reponse@lxix=\toks165
+\reponse@lxviii=\toks166
+\reponse@lxvii=\toks167
+\reponse@lxvi=\toks168
+\reponse@lxv=\toks169
+\reponse@lxiv=\toks170
+\reponse@lxiii=\toks171
+\reponse@lxii=\toks172
+\reponse@lxi=\toks173
+\reponse@lx=\toks174
+\reponse@lix=\toks175
+\reponse@lviii=\toks176
+\reponse@lvii=\toks177
+\reponse@lvi=\toks178
+\reponse@lv=\toks179
+\reponse@liv=\toks180
+\reponse@liii=\toks181
+\reponse@lii=\toks182
+\reponse@li=\toks183
+\reponse@l=\toks184
+\reponse@xlix=\toks185
+\reponse@xlviii=\toks186
+\reponse@xlvii=\toks187
+\reponse@xlvi=\toks188
+\reponse@xlv=\toks189
+\reponse@xliv=\toks190
+\reponse@xliii=\toks191
+\reponse@xlii=\toks192
+\reponse@xli=\toks193
+\reponse@xl=\toks194
+\reponse@xxxix=\toks195
+\reponse@xxxviii=\toks196
+\reponse@xxxvii=\toks197
+\reponse@xxxvi=\toks198
+\reponse@xxxv=\toks199
+\reponse@xxxiv=\toks200
+\reponse@xxxiii=\toks201
+\reponse@xxxii=\toks202
+\reponse@xxxi=\toks203
+\reponse@xxx=\toks204
+\reponse@xxix=\toks205
+\reponse@xxviii=\toks206
+\reponse@xxvii=\toks207
+\reponse@xxvi=\toks208
+\reponse@xxv=\toks209
+\reponse@xxiv=\toks210
+\reponse@xxiii=\toks211
+\reponse@xxii=\toks212
+\reponse@xxi=\toks213
+\reponse@xx=\toks214
+\reponse@xix=\toks215
+\reponse@xviii=\toks216
+\reponse@xvii=\toks217
+\reponse@xvi=\toks218
+\reponse@xv=\toks219
+\reponse@xiv=\toks220
+\reponse@xiii=\toks221
+\reponse@xii=\toks222
+\reponse@xi=\toks223
+\reponse@x=\toks224
+\reponse@ix=\toks225
+\reponse@viii=\toks226
+\reponse@vii=\toks227
+\reponse@vi=\toks228
+\reponse@v=\toks229
+\reponse@iv=\toks230
+\reponse@iii=\toks231
+\reponse@ii=\toks232
+\reponse@i=\toks233
+\AMCnum@questions=\count314
+\AMCrep@@count=\count315
+\amc_memory_elts_count=\count316
+\c@AMC@specsi=\count317
+\AMC@coli=\count318
+\AMC@tf@ncols=\count319
+\AMCformTH=\dimen163
+\AMC@tfcolw=\dimen164
+\AMC@tfaw=\dimen165
+\AMC@tfbox=\box62
+\AMChorizAnswerSep=\skip75
+\AMChorizBoxSep=\skip76
+\AMC@mn@test=\skip77
+\AMC@mn@sep=\skip78
+\AMC@mn@leftmargin=\skip79
+\AMC@mn@rightmargin=\skip80
+\AMC@sz@width=\skip81
+\AMC@sz@height=\skip82
+\AMC@sz@depth=\skip83
+\AMC@sza@width=\skip84
+\AMC@sza@height=\skip85
+\AMC@sza@depth=\skip86
+\c@AMCquestionaff=\count320
+\ouverte@vs=\dimen166
+\AMC@chiffres=\count321
+\AMCcodeHspace=\dimen167
+\AMCcodeVspace=\dimen168
+\amc_code_digit_n_int=\count322
+\amc_multi_count_int=\count323
+\amc_num_exponent_int=\count324
+\amc_todigits_int=\count325
+\AMCnumeric@Hspace=\dimen169
+\AMCnumeric@Vspace=\dimen170
+\amc_num_ndigits_int=\count326
+\amc_num_decd_int=\count327
+\amc_num_expo_int=\count328
+\amc_num_base_int=\count329
+\amc_vheadunitindex_int=\count330
+\amc_num_exact_int=\count331
+\amc_num_approx_int=\count332
+\amc_num_digit_value_int=\count333
+\amc_num_first_digit_int=\count334
+\amc_num_digit_int=\count335
+\amc_num_sign_int=\count336
+\amc_num_expo_sign_int=\count337
+\amc_num_correct_expo_int=\count338
+\AMCopen@Hspace=\dimen171
+\AMCopen@LineHeight=\dimen172
+\AMCopen@Lines=\count339
+\AMCopen@boxmargin=\dimen173
+\AMCopen@boxframerule=\dimen174
+\AMCopen@framerule=\dimen175
+\AMC@addpages=\count340
+
+(/usr/share/texlive/texmf-dist/tex/latex/etex-pkg/etex.sty
+Package: etex 2016/08/01 v2.7 eTeX basic definition package (PEB,DPC)
+
+
+Package etex Warning: Extended allocation already in use.
+(etex)                etex.sty code will not be used.
+(etex)                To force etex package to load, add
+(etex)                \RequirePackage{etex}
+(etex)                at the start of the document.
+
+) ***SUJET***
+(/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+)
+\Gm@cnth=\count341
+\Gm@cntv=\count342
+\c@Gm@tempcnt=\count343
+\Gm@bindingoffset=\dimen176
+\Gm@wd@mp=\dimen177
+\Gm@odd@mp=\dimen178
+\Gm@even@mp=\dimen179
+\Gm@layoutwidth=\dimen180
+\Gm@layoutheight=\dimen181
+\Gm@layouthoffset=\dimen182
+\Gm@layoutvoffset=\dimen183
+\Gm@dimlist=\toks234
+)
+\AMC@XYFILE=\write6
+\openout6 = `amc-compiled.xy'.
+
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/multicol.sty
+Package: multicol 2024/09/14 v1.9i multicolumn formatting (FMi)
+\c@tracingmulticols=\count344
+\mult@box=\box63
+\multicol@leftmargin=\dimen184
+\c@unbalance=\count345
+\c@collectmore=\count346
+\doublecol@number=\count347
+\multicoltolerance=\count348
+\multicolpretolerance=\count349
+\full@width=\dimen185
+\page@free=\dimen186
+\premulticols=\dimen187
+\postmulticols=\dimen188
+\multicolsep=\skip87
+\multicolbaselineskip=\skip88
+\partial@page=\box64
+\last@line=\box65
+\mc@boxedresult=\box66
+\maxbalancingoverflow=\dimen189
+\mult@rightbox=\box67
+\mult@grightbox=\box68
+\mult@firstbox=\box69
+\mult@gfirstbox=\box70
+\@tempa=\box71
+\@tempa=\box72
+\@tempa=\box73
+\@tempa=\box74
+\@tempa=\box75
+\@tempa=\box76
+\@tempa=\box77
+\@tempa=\box78
+\@tempa=\box79
+\@tempa=\box80
+\@tempa=\box81
+\@tempa=\box82
+\@tempa=\box83
+\@tempa=\box84
+\@tempa=\box85
+\@tempa=\box86
+\@tempa=\box87
+\@tempa=\box88
+\@tempa=\box89
+\@tempa=\box90
+\@tempa=\box91
+\@tempa=\box92
+\@tempa=\box93
+\@tempa=\box94
+\@tempa=\box95
+\@tempa=\box96
+\@tempa=\box97
+\@tempa=\box98
+\@tempa=\box99
+\@tempa=\box100
+\@tempa=\box101
+\@tempa=\box102
+\@tempa=\box103
+\@tempa=\box104
+\@tempa=\box105
+\@tempa=\box106
+\c@minrows=\count350
+\c@columnbadness=\count351
+\c@finalcolumnbadness=\count352
+\last@try=\dimen190
+\multicolovershoot=\dimen191
+\multicolundershoot=\dimen192
+\mult@nat@firstbox=\box107
+\colbreak@box=\box108
+\mc@col@check@num=\count353
+)
+
+Package fontspec Info: 
+(fontspec)             Font family 'LinuxLibertineO(0)' created for font
+(fontspec)             'Linux Libertine O' with options [Ligatures=TeX].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.: <->"Linux Libertine
+(fontspec)             O/OT:script=latn;language=dflt;mapping=tex-text;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: <->"Linux
+(fontspec)             Libertine
+(fontspec)             O/OT:script=latn;language=dflt;+smcp;mapping=tex-text;"
+(fontspec)             - 'bold' (b/n) with NFSS spec.: <->"Linux Libertine
+(fontspec)             O/B/OT:script=latn;language=dflt;mapping=tex-text;"
+(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: <->"Linux
+(fontspec)             Libertine
+(fontspec)             O/B/OT:script=latn;language=dflt;+smcp;mapping=tex-text;
+"
+(fontspec)             - 'italic' (m/it) with NFSS spec.: <->"Linux Libertine
+(fontspec)             O/I/OT:script=latn;language=dflt;mapping=tex-text;"
+(fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.:
+(fontspec)             <->"Linux Libertine
+(fontspec)             O/I/OT:script=latn;language=dflt;+smcp;mapping=tex-text;
+"
+(fontspec)             - 'bold italic' (b/it) with NFSS spec.: <->"Linux
+(fontspec)             Libertine
+(fontspec)             O/BI/OT:script=latn;language=dflt;mapping=tex-text;"
+(fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.:
+(fontspec)             <->"Linux Libertine
+(fontspec)             O/BI/OT:script=latn;language=dflt;+smcp;mapping=tex-text
+;"
+
+
+No file amc-compiled.aux.
+\openout1 = `amc-compiled.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+
+Package fontspec Info: 
+(fontspec)             Adjusting the maths setup (use [no-math] to avoid
+(fontspec)             this).
+
+\symlegacymaths=\mathgroup4
+LaTeX Font Info:    Overwriting symbol font `legacymaths' in version `bold'
+(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 6.
+LaTeX Font Info:    Redeclaring math accent \acute on input line 6.
+LaTeX Font Info:    Redeclaring math accent \grave on input line 6.
+LaTeX Font Info:    Redeclaring math accent \ddot on input line 6.
+LaTeX Font Info:    Redeclaring math accent \tilde on input line 6.
+LaTeX Font Info:    Redeclaring math accent \bar on input line 6.
+LaTeX Font Info:    Redeclaring math accent \breve on input line 6.
+LaTeX Font Info:    Redeclaring math accent \check on input line 6.
+LaTeX Font Info:    Redeclaring math accent \hat on input line 6.
+LaTeX Font Info:    Redeclaring math accent \dot on input line 6.
+LaTeX Font Info:    Redeclaring math accent \mathring on input line 6.
+LaTeX Font Info:    Redeclaring math symbol \colon on input line 6.
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 6.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 6.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 6.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 6.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 6.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 6.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 6.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 6.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 6.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 6.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 6.
+LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 6.
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 6.
+LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
+(Font)              `operators' in the math version `normal' on input line 6.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> TU/LinuxLibertineO(0)/m/n on input line
+ 6.
+LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
+(Font)              `operators' in the math version `bold' on input line 6.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> TU/LinuxLibertineO(0)/m/n on input lin
+e 6.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  TU/LinuxLibertineO(0)/m/n --> TU/LinuxLibertineO(0)/m/n
+ on input line 6.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> TU/LinuxLibertineO(0)/m/it on input li
+ne 6.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> TU/LinuxLibertineO(0)/b/n on input lin
+e 6.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 6.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 6.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  TU/LinuxLibertineO(0)/m/n --> TU/LinuxLibertineO(0)/b/n
+ on input line 6.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> TU/LinuxLibertineO(0)/b/it on input l
+ine 6.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 6.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 6.
+\AMC@ovalbox@R=\box109
+\AMC@ovalbox@RF=\box110
+\AMC@ovalbox@=\box111
+\AMC@ovalbox@F=\box112
+*geometry* driver: auto-detecting
+*geometry* detected driver: xetex
+*geometry* verbose mode - [ preamble ] result:
+* driver: xetex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(85.35826pt, 443.57848pt, 85.35826pt)
+* v-part:(T,H,B)=(99.58464pt, 624.25346pt, 71.13188pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=443.57848pt
+* \textheight=624.25346pt
+* \oddsidemargin=13.08827pt
+* \evensidemargin=13.08827pt
+* \topmargin=-38.12675pt
+* \headheight=56.9055pt
+* \headsep=8.5359pt
+* \topskip=10.0pt
+* \footskip=28.45274pt
+* \marginparwidth=65.0pt
+* \marginparsep=11.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+
+AMC:copies:total=3
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 31.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 31.
+! Missing number, treated as zero.
+<to be read again> 
+                   \grB@k 
+l.31 }
+      
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \grB@k 
+l.31 }
+      
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \grB@k 
+l.31 }
+      
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \AMCgrB@j 
+l.31 }
+      
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \grB@k 
+l.31 }
+      
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+
+! Package automultiplechoice Error: No group mode for grB.
+
+See the automultiplechoice package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.31 }
+      
+No mode has been defined for group 'grB'. This should not occur...
+
+! Missing \endcsname inserted.
+<to be read again> 
+                   \AMCgrB@mode 
+l.31 }
+      
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+! Extra \endcsname.
+\AMCgroup@pre ...\csname AMCgrouppre@#1\endcsname 
+                                                  {#2}{#3}{#4}
+l.31 }
+      
+I'm ignoring this, since I wasn't doing a \csname.
+
+! You can't use `\relax' after \advance.
+<recently read> \AMCgrB@j 
+                          
+l.31 }
+      
+I'm forgetting what you said and not changing anything.
+
+Missing character: There is no ^^A (U+0001) in font Linux Libertine O/OT:script
+=latn;language=dflt;mapping=tex-text;!
+! Missing number, treated as zero.
+<to be read again> 
+                   \AMCgrB@j 
+l.31 }
+      
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Missing = inserted for \ifnum.
+<to be read again> 
+                   \AMCgrB@j 
+l.31 }
+      
+I was expecting to see `<', `=', or `>'. Didn't.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \AMCgrB@j 
+l.31 }
+      
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \relax 
+l.31 }
+      
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! You can't use a prefix with `the character ='.
+<to be read again> 
+                   =
+l.31 }
+      
+I'll pretend you didn't say \long or \outer or \global or \protected.
+
+Missing character: There is no ^^A (U+0001) in font Linux Libertine O/OT:script
+=latn;language=dflt;mapping=tex-text;!
+! Missing number, treated as zero.
+<to be read again> 
+                   \AMCgrB@j 
+l.31 }
+      
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! You can't use `\relax' after \the.
+<recently read> \grB@ 
+                      
+l.31 }
+      
+I'm forgetting what you said and using zero instead.
+
+
+
+[1
+
+] 
+AMC:copies:add=1
+! Missing number, treated as zero.
+<to be read again> 
+                   \grB@k 
+l.31 }
+      
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \grB@k 
+l.31 }
+      
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \grB@k 
+l.31 }
+      
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \AMCgrB@j 
+l.31 }
+      
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \grB@k 
+l.31 }
+      
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+
+! Package automultiplechoice Error: No group mode for grB.
+
+See the automultiplechoice package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.31 }
+      
+No mode has been defined for group 'grB'. This should not occur...
+
+! Missing \endcsname inserted.
+<to be read again> 
+                   \AMCgrB@mode 
+l.31 }
+      
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+! Extra \endcsname.
+\AMCgroup@pre ...\csname AMCgrouppre@#1\endcsname 
+                                                  {#2}{#3}{#4}
+l.31 }
+      
+I'm ignoring this, since I wasn't doing a \csname.
+
+! You can't use `\relax' after \advance.
+<recently read> \AMCgrB@j 
+                          
+l.31 }
+      
+I'm forgetting what you said and not changing anything.
+
+Missing character: There is no ^^A (U+0001) in font Linux Libertine O/OT:script
+=latn;language=dflt;mapping=tex-text;!
+! Missing number, treated as zero.
+<to be read again> 
+                   \AMCgrB@j 
+l.31 }
+      
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Missing = inserted for \ifnum.
+<to be read again> 
+                   \AMCgrB@j 
+l.31 }
+      
+I was expecting to see `<', `=', or `>'. Didn't.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \AMCgrB@j 
+l.31 }
+      
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \relax 
+l.31 }
+      
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! You can't use a prefix with `the character ='.
+<to be read again> 
+                   =
+l.31 }
+      
+I'll pretend you didn't say \long or \outer or \global or \protected.
+
+Missing character: There is no ^^A (U+0001) in font Linux Libertine O/OT:script
+=latn;language=dflt;mapping=tex-text;!
+! Missing number, treated as zero.
+<to be read again> 
+                   \AMCgrB@j 
+l.31 }
+      
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! You can't use `\relax' after \the.
+<recently read> \grB@ 
+                      
+l.31 }
+      
+I'm forgetting what you said and using zero instead.
+
+
+
+[1
+
+] 
+AMC:copies:add=1
+! Missing number, treated as zero.
+<to be read again> 
+                   \grB@k 
+l.31 }
+      
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \grB@k 
+l.31 }
+      
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \grB@k 
+l.31 }
+      
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \AMCgrB@j 
+l.31 }
+      
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \grB@k 
+l.31 }
+      
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+
+! Package automultiplechoice Error: No group mode for grB.
+
+See the automultiplechoice package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.31 }
+      
+No mode has been defined for group 'grB'. This should not occur...
+
+! Missing \endcsname inserted.
+<to be read again> 
+                   \AMCgrB@mode 
+l.31 }
+      
+The control sequence marked <to be read again> should
+not appear between \csname and \endcsname.
+
+! Extra \endcsname.
+\AMCgroup@pre ...\csname AMCgrouppre@#1\endcsname 
+                                                  {#2}{#3}{#4}
+l.31 }
+      
+I'm ignoring this, since I wasn't doing a \csname.
+
+! You can't use `\relax' after \advance.
+<recently read> \AMCgrB@j 
+                          
+l.31 }
+      
+I'm forgetting what you said and not changing anything.
+
+Missing character: There is no ^^A (U+0001) in font Linux Libertine O/OT:script
+=latn;language=dflt;mapping=tex-text;!
+! Missing number, treated as zero.
+<to be read again> 
+                   \AMCgrB@j 
+l.31 }
+      
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Missing = inserted for \ifnum.
+<to be read again> 
+                   \AMCgrB@j 
+l.31 }
+      
+I was expecting to see `<', `=', or `>'. Didn't.
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \AMCgrB@j 
+l.31 }
+      
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! Missing number, treated as zero.
+<to be read again> 
+                   \relax 
+l.31 }
+      
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! You can't use a prefix with `the character ='.
+<to be read again> 
+                   =
+l.31 }
+      
+I'll pretend you didn't say \long or \outer or \global or \protected.
+
+Missing character: There is no ^^A (U+0001) in font Linux Libertine O/OT:script
+=latn;language=dflt;mapping=tex-text;!
+! Missing number, treated as zero.
+<to be read again> 
+                   \AMCgrB@j 
+l.31 }
+      
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+! You can't use `\relax' after \the.
+<recently read> \grB@ 
+                      
+l.31 }
+      
+I'm forgetting what you said and using zero instead.
+
+
+
+[1
+
+] 
+AMC:copies:add=1
+(./amc-compiled.aux)
+ ***********
+LaTeX2e <2024-11-01> patch level 2
+L3 programming layer <2025-01-18>
+ ***********
+ ) 
+Here is how much of TeX's memory you used:
+ 8672 strings out of 475825
+ 203077 string characters out of 5774301
+ 650015 words of memory out of 5000000
+ 31503 multiletter control sequences out of 15000+600000
+ 559364 words of font info for 52 fonts, out of 8000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 94i,23n,107p,341b,658s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+Output written on amc-compiled.pdf (3 pages).
