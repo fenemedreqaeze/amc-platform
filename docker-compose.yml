@@ -4,7 +4,7 @@ services:
     container_name: amc-api
     environment:
       - AMC_DATA_DIR=/amc/data
-      - CORS_ORIGINS=http://localhost:3000,http://frontend:80
+      - CORS_ORIGINS=https://${CODESPACE_NAME}-3000.app.github.dev,https://${CODESPACE_NAME}-8000.app.github.dev,http://localhost:3000
     volumes:
       - ./data:/amc/data
     ports:
