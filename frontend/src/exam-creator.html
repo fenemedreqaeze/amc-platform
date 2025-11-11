@@ -6,33 +6,29 @@
   <title>Créateur d'examen</title>
   <style>
     :root {
-      --bg: #0f172a;         /* slate-900 */
-      --card: #111827;       /* gray-900 */
-      --muted: #1f2937;      /* gray-800 */
-      --text: #e5e7eb;       /* gray-200 */
-      --soft: #9ca3af;       /* gray-400 */
-      --primary: #60a5fa;    /* blue-400 */
-      --primary-600: #2563eb;/* blue-600 */
-      --success: #22c55e;    /* green-500 */
-      --danger: #ef4444;     /* red-500 */
-      --danger-600: #dc2626; /* red-600 */
+      --bg: #0f172a;
+      --card: #111827;
+      --muted: #1f2937;
+      --text: #e5e7eb;
+      --soft: #9ca3af;
+      --primary: #60a5fa;
+      --primary-600: #2563eb;
+      --success: #22c55e;
+      --danger: #ef4444;
+      --danger-600: #dc2626;
       --shadow: rgba(0,0,0,.35);
-      
-      /* Couleurs par matière */
-      --maths: #e74c3c;      /* Rouge */
-      --french: #3498db;     /* Bleu */
-      --english: #9b59b6;    /* Violet */
-      --history: #e67e22;    /* Orange */
-      --geography: #27ae60;  /* Vert */
-      --science: #f39c12;    /* Jaune */
-      --other: #95a5a6;      /* Gris */
+      --maths: #e74c3c;
+      --french: #3498db;
+      --english: #9b59b6;
+      --history: #e67e22;
+      --geography: #27ae60;
+      --science: #f39c12;
+      --other: #95a5a6;
     }
 
-    html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, sans-serif; }
-
+    html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); font-family: system-ui, sans-serif; }
     .container { max-width: 980px; margin: 32px auto; padding: 0 16px; }
-
-    h1 { font-size: 28px; font-weight: 700; margin: 0 0 20px; letter-spacing: .3px; }
+    h1 { font-size: 28px; font-weight: 700; margin: 0 0 20px; }
     h3 { margin: 0 0 12px; font-size: 18px; }
 
     .exam-header {
@@ -58,7 +54,7 @@
       color: var(--soft);
     }
 
-    select {
+    select, textarea, input[type="text"], input[type="number"] {
       width: 100%;
       background: #0b1220;
       color: var(--text);
@@ -66,6 +62,7 @@
       border-radius: 10px;
       padding: 10px 12px;
       outline: none;
+      margin-bottom: 12px;
     }
 
     .question-card {
@@ -75,10 +72,8 @@
       padding: 16px;
       margin: 16px 0;
       box-shadow: 0 6px 20px var(--shadow);
-      transition: border-color 0.3s ease;
     }
 
-    /* Styles par matière */
     .subject-maths { border-left: 4px solid var(--maths); }
     .subject-french { border-left: 4px solid var(--french); }
     .subject-english { border-left: 4px solid var(--english); }
@@ -86,18 +81,6 @@
     .subject-geography { border-left: 4px solid var(--geography); }
     .subject-science { border-left: 4px solid var(--science); }
     .subject-other { border-left: 4px solid var(--other); }
-
-    textarea, input[type="text"] {
-      width: 100%;
-      resize: vertical;
-      background: #0b1220;
-      color: var(--text);
-      border: 1px solid var(--muted);
-      border-radius: 10px;
-      padding: 10px 12px;
-      margin-bottom: 12px;
-      outline: none;
-    }
 
     .answer-row {
       display: flex;
@@ -117,8 +100,6 @@
       border: none;
       border-left: 1px solid var(--muted);
       padding: 8px 10px;
-      color: var(--text);
-      outline: none;
     }
 
     .btn-primary, .btn-success, .btn-danger {
@@ -128,7 +109,8 @@
       cursor: pointer;
       font-weight: 600;
       color: white;
-      transition: transform .04s ease, filter .08s ease, opacity .2s ease;
+      transition: transform .04s ease;
+      margin: 5px;
     }
 
     .btn-primary { background: var(--primary-600); }
@@ -136,23 +118,27 @@
     .btn-danger { background: var(--danger); }
 
     .btn-primary:active, .btn-success:active, .btn-danger:active { transform: translateY(1px); }
-    .btn-danger:hover { filter: brightness(.95); }
 
     .actions { text-align: center; margin-top: 24px; display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
-
     .sub-actions { display: flex; gap: 8px; margin-top: 10px; }
-
     .note { color: var(--soft); font-size: 13px; margin-top: 8px; }
+
+    .download-buttons {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin-top: 15px;
+      flex-wrap: wrap;
+    }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>Créateur d'examen</h1>
 
-    <!-- En-tête de l'examen avec métadonnées -->
     <div class="exam-header">
-      <input type="text" placeholder="Titre de l'examen" style="font-size: 1.3em; font-weight: bold; background: transparent; border: none; color: var(--text); outline: none; width: 100%;">
-      <textarea placeholder="Description de l'examen..." rows="2" style="margin-top: 10px;"></textarea>
+      <input type="text" id="exam-title" placeholder="Titre de l'examen" style="font-size: 1.3em; font-weight: bold; background: transparent; border: none; color: var(--text); outline: none; width: 100%;">
+      <textarea id="exam-description" placeholder="Description de l'examen..." rows="2" style="margin-top: 10px;"></textarea>
       
       <div class="exam-meta">
         <div>
@@ -180,53 +166,73 @@
 
     <div id="questions-container"></div>
 
-    <!-- Boutons d'action -->
     <div class="actions">
       <button type="button" class="btn-success" onclick="addQuestion()">➕ Ajouter une Question</button>
       <button type="button" class="btn-primary" onclick="saveExam()">💾 Sauvegarder l'Examen</button>
       <button type="button" class="btn-primary" onclick="goBack()">← Retour à l'accueil</button>
     </div>
 
-    <!-- Section AMC - Génération LaTeX & PDF -->
     <div class="exam-header" style="margin-top: 30px;">
-      <h3>🔄 Génération AMC</h3>
+      <h3>🔄 Génération de fichiers</h3>
       
       <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 15px;">
         <div>
           <label for="n-copies">Nombre de copies</label>
-          <input type="number" id="n-copies" value="1" min="1" style="width: 100%; padding: 10px 12px; border-radius: 10px; border: 1px solid var(--muted); background: #0b1220; color: var(--text);">
+          <input type="number" id="n-copies" value="1" min="1">
         </div>
         <div>
           <label for="project-id">ID Projet</label>
-          <input type="text" id="project-id" readonly style="width: 100%; padding: 10px 12px; border-radius: 10px; border: 1px solid var(--muted); background: #0b1220; color: var(--soft);">
+          <input type="text" id="project-id" readonly style="color: var(--soft);">
         </div>
       </div>
 
       <div class="actions" style="margin-top: 20px;">
-        <button type="button" class="btn-primary" onclick="generateLaTeX()">📄 Générer le LaTeX</button>
-        <button type="button" class="btn-primary" onclick="prepareExam()">🔄 Préparer l'examen</button>
-        <button type="button" class="btn-primary" onclick="compilePDF()">📦 Compiler le PDF</button>
-        <button type="button" class="btn-success" onclick="downloadPDF()">⬇️ Télécharger PDF</button>
+        <button type="button" class="btn-success" onclick="generateRealPDF()">🎯 Générer PDF</button>
+        <button type="button" class="btn-primary" onclick="downloadLaTeX()">📄 Télécharger .tex</button>
       </div>
 
       <div id="amc-status" style="margin-top: 15px; padding: 12px; border-radius: 10px; background: #0b1220; border: 1px solid var(--muted);"></div>
+
+      <div id="download-buttons" class="download-buttons" style="display: none;">
+        <!-- Les boutons de téléchargement apparaîtront ici -->
+      </div>
     </div>
 
-
-
-    <p class="note">Astuce : marque la bonne réponse en cochant le bouton radio correspondant. Tu peux ajouter/supprimer des réponses librement.</p>
+    <p class="note">Astuce : marque la bonne réponse en cochant le bouton radio correspondant.</p>
   </div>
 
   <script>
     let questionCount = 0;
     let currentSubject = 'maths';
+    let currentProjectId = null;
+    let currentLaTeXContent = '';
+
+    function getCurrentProjectId() {
+      return localStorage.getItem('currentProjectId');
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      const projectId = getCurrentProjectId();
+      if (projectId) {
+        currentProjectId = projectId;
+        document.getElementById('project-id').value = projectId;
+        showAMCStatus('✅ Projet chargé: ' + projectId, 'success');
+      } else {
+        showAMCStatus('❌ Aucun projet actif - Revenez à l\'accueil', 'error');
+      }
+      
+      addQuestion();
+      
+      document.getElementById('subject-select').addEventListener('change', function(e) {
+        currentSubject = e.target.value;
+        updateQuestionStyles();
+      });
+    });
 
     function updateQuestionStyles() {
       document.querySelectorAll('.question-card').forEach(card => {
-        // Retirer toutes les classes de matière
         card.classList.remove('subject-maths', 'subject-french', 'subject-english', 'subject-history', 'subject-geography', 'subject-science', 'subject-other');
-        // Ajouter la classe de matière actuelle
-        card.classList.add(`subject-${currentSubject}`);
+        card.classList.add('subject-' + currentSubject);
       });
     }
 
@@ -235,8 +241,8 @@
       const questionsContainer = document.getElementById('questions-container');
 
       const questionDiv = document.createElement('div');
-      questionDiv.className = `question-card subject-${currentSubject}`;
-      questionDiv.id = `question-${questionCount}`;
+      questionDiv.className = 'question-card subject-' + currentSubject;
+      questionDiv.id = 'question-' + questionCount;
       questionDiv.innerHTML = `
         <h3>Question ${questionCount}</h3>
         <textarea placeholder="Énoncé de la question..." rows="3"></textarea>
@@ -261,44 +267,33 @@
 
       questionsContainer.appendChild(questionDiv);
 
-      // === ÉVÉNEMENTS SPÉCIFIQUES À CETTE QUESTION ===
-
-      // 1) Ajouter une réponse
-      const addBtn = questionDiv.querySelector('.add-answer-btn');
-      addBtn.addEventListener('click', function (e) {
+      questionDiv.querySelector('.add-answer-btn').addEventListener('click', function (e) {
         e.stopPropagation();
         addAnswer(this.getAttribute('data-id'));
       });
 
-      // 2) Supprimer la question (un seul handler, pas de handler générique)
-      const removeBtn = questionDiv.querySelector('.remove-question-btn');
-      removeBtn.addEventListener('click', function (e) {
+      questionDiv.querySelector('.remove-question-btn').addEventListener('click', function (e) {
         e.stopPropagation();
         removeQuestion(this.getAttribute('data-id'));
       });
 
-      // 3) Supprimer une réponse (ne cible QUE les boutons de ligne-réponse)
-      const answerDeleteBtns = questionDiv.querySelectorAll('.answer-remove');
-      answerDeleteBtns.forEach(btn => {
+      questionDiv.querySelectorAll('.answer-remove').forEach(btn => {
         btn.addEventListener('click', function (e) {
           e.stopPropagation();
           this.parentElement.remove();
         });
       });
 
-      // 4) Styling visuel de la bonne réponse
-      const radios = questionDiv.querySelectorAll(`input[type="radio"][name="correct-${questionCount}"]`);
-      radios.forEach(r => {
+      questionDiv.querySelectorAll('input[type="radio"]').forEach(r => {
         r.addEventListener('change', () => {
           questionDiv.querySelectorAll('.answer-row').forEach(row => row.classList.remove('correct-answer'));
-          const row = r.closest('.answer-row');
-          if (row) row.classList.add('correct-answer');
+          r.closest('.answer-row').classList.add('correct-answer');
         });
       });
     }
 
     function addAnswer(questionId) {
-      const question = document.getElementById(`question-${questionId}`);
+      const question = document.getElementById('question-' + questionId);
       if (!question) return;
 
       const newAnswer = document.createElement('div');
@@ -309,273 +304,192 @@
         <button type="button" class="btn-danger answer-remove">✕</button>
       `;
 
-      // Supprimer cette réponse
       newAnswer.querySelector('.answer-remove').addEventListener('click', function (e) {
         e.stopPropagation();
         this.parentElement.remove();
       });
 
-      // Mettre en surbrillance si cochée
-      const radio = newAnswer.querySelector('input[type="radio"]');
-      radio.addEventListener('change', () => {
+      newAnswer.querySelector('input[type="radio"]').addEventListener('change', () => {
         question.querySelectorAll('.answer-row').forEach(row => row.classList.remove('correct-answer'));
         newAnswer.classList.add('correct-answer');
       });
 
-      // Insérer juste avant les sous-actions (boutons Ajouter/Supprimer)
-      const subActions = question.querySelector('.sub-actions');
-      question.insertBefore(newAnswer, subActions);
+      question.insertBefore(newAnswer, question.querySelector('.sub-actions'));
     }
 
     function removeQuestion(questionId) {
-      const node = document.getElementById(`question-${questionId}`);
+      const node = document.getElementById('question-' + questionId);
       if (node) node.remove();
     }
 
     function saveExam() {
       const subject = document.getElementById('subject-select');
       const difficulty = document.getElementById('exam-difficulty');
-      const title = document.querySelector('input[placeholder*="Titre"]').value || 'Sans titre';
+      const title = document.getElementById('exam-title').value || 'Sans titre';
       const subjectText = subject.options[subject.selectedIndex].text;
       const difficultyText = difficulty.options[difficulty.selectedIndex].text;
       
-      // Esquisse de sérialisation (pour plus tard)
-      const payload = { 
-        title,
-        subject: currentSubject,
-        difficulty: difficulty.value,
-        questions: [] 
-      };
-      
-      document.querySelectorAll('.question-card').forEach((qCard, idx) => {
-        const statement = qCard.querySelector('textarea')?.value || '';
-        const answers = [];
-        const name = `correct-${idx + 1}`;
-        const correctIndex = Array.from(qCard.querySelectorAll(`input[type="radio"][name="${name}"]`)).findIndex(r => r.checked);
-        qCard.querySelectorAll('.answer-row').forEach((row) => {
-          const text = row.querySelector('input[type="text"]').value || '';
-          answers.push(text);
-        });
-        payload.questions.push({ statement, answers, correctIndex });
-      });
-
-      alert(`🎉 Examen "${title}" sauvegardé !\n📚 Matière: ${subjectText}\n🎯 Niveau: ${difficultyText}`);
-      console.log('Exam payload =>', payload);
+      alert('🎉 Examen "' + title + '" sauvegardé !\n📚 Matière: ' + subjectText + '\n🎯 Niveau: ' + difficultyText);
     }
 
     function goBack() {
       window.location.href = '/';
     }
 
-    // Démarrage quand le DOM est prêt
-    document.addEventListener('DOMContentLoaded', () => {
-      addQuestion();
+    function generateLaTeX() {
+      const title = document.getElementById('exam-title').value || 'Examen Sans Titre';
+      const subject = document.getElementById('subject-select').options[document.getElementById('subject-select').selectedIndex].text;
       
-      // Gérer le changement de matière
-      document.getElementById('subject-select').addEventListener('change', function(e) {
-        currentSubject = e.target.value;
-        updateQuestionStyles();
-      });
-    });
-    
-document.addEventListener('DOMContentLoaded', () => {
-  const subjectSel = document.getElementById('subject-select');
-  if (subjectSel) {
-    currentSubject = subjectSel.value || 'other';
-    subjectSel.addEventListener('change', () => {
-      currentSubject = subjectSel.value || 'other';
-      // (optionnel) adapter le thème/classe CSS selon la matière ici
-    });
-  }
-});
+      let latexContent = '\\documentclass[a4paper,11pt]{article}\n';
+      latexContent += '\\usepackage[utf8]{inputenc}\n';
+      latexContent += '\\usepackage[T1]{fontenc}\n';
+      latexContent += '\\usepackage[francais]{babel}\n';
+      latexContent += '\\usepackage{amsmath}\n';
+      latexContent += '\\usepackage{amssymb}\n\n';
+      latexContent += '\\title{' + title + '}\n';
+      latexContent += '\\author{' + subject + '}\n';
+      latexContent += '\\date{\\today}\n\n';
+      latexContent += '\\begin{document}\n';
+      latexContent += '\\maketitle\n\n';
+      latexContent += '\\section*{Questions}\n\n';
 
-// === INTÉGRATION AMC API ===
-let currentProjectId = null;
-
-// Créer un projet AMC
-async function createAMCProject() {
-    try {
-        showAMCStatus('🔄 Création du projet...', 'loading');
-        
-        const response = await fetch('/api/projects', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            }
-        });
-        
-        if (!response.ok) throw new Error(`HTTP ${response.status}`);
-        
-        const data = await response.json();
-        currentProjectId = data.project_id;
-        document.getElementById('project-id').value = currentProjectId;
-        showAMCStatus('✅ Projet créé: ' + currentProjectId, 'success');
-        return currentProjectId;
-        
-    } catch (error) {
-        showAMCStatus('❌ Erreur création projet: ' + error.message, 'error');
-        return null;
-    }
-}
-
-// Générer le code LaTeX à partir des questions
-function generateLaTeX() {
-    const title = document.querySelector('input[placeholder*="Titre"]').value || 'Examen Sans Titre';
-    const subject = document.getElementById('subject-select').options[document.getElementById('subject-select').selectedIndex].text;
-    
-    let latexContent = `\\documentclass[a4paper,11pt]{article}
-\\usepackage[utf8]{inputenc}
-\\usepackage[T1]{fontenc}
-\\usepackage[francais]{babel}
-\\usepackage{amc}
-
-\\title{${title}}
-\\author{${subject}}
-\\date{\\\\today}
-
-\\begin{document}
-\\maketitle
-
-\\begin{questions}`;
-
-    // Ajouter chaque question au LaTeX
-    document.querySelectorAll('.question-card').forEach((qCard, index) => {
-        const questionText = qCard.querySelector('textarea').value || `Question ${index + 1}`;
+      document.querySelectorAll('.question-card').forEach((qCard, index) => {
+        const questionText = qCard.querySelector('textarea').value || 'Question ' + (index + 1);
         const answers = [];
         let correctAnswerIndex = -1;
         
-        // Récupérer les réponses et identifier la correcte
         qCard.querySelectorAll('.answer-row').forEach((row, ansIndex) => {
-            const answerText = row.querySelector('input[type="text"]').value || `Réponse ${ansIndex + 1}`;
-            const isCorrect = row.querySelector('input[type="radio"]').checked;
-            answers.push(answerText);
-            if (isCorrect) correctAnswerIndex = ansIndex;
+          const answerText = row.querySelector('input[type="text"]').value || 'Réponse ' + (ansIndex + 1);
+          const isCorrect = row.querySelector('input[type="radio"]').checked;
+          answers.push(answerText);
+          if (isCorrect) correctAnswerIndex = ansIndex;
         });
 
-        if (answers.length > 0 && correctAnswerIndex >= 0) {
-            latexContent += `\n\n\\question{${questionText}}`;
-            answers.forEach((answer, i) => {
-                if (i === correctAnswerIndex) {
-                    latexContent += `\n\\bonne{${answer}}`;
-                } else {
-                    latexContent += `\n\\mauvaise{${answer}}`;
-                }
-            });
+        if (answers.length > 0) {
+          latexContent += '\\textbf{' + (index + 1) + '. ' + questionText + '}\n';
+          latexContent += '\\begin{enumerate}\n';
+          answers.forEach((answer, i) => {
+            if (i === correctAnswerIndex) {
+              latexContent += '\\item[✓] ' + answer + '\n';
+            } else {
+              latexContent += '\\item[ ] ' + answer + '\n';
+            }
+          });
+          latexContent += '\\end{enumerate}\n\n';
         }
-    });
+      });
 
-    latexContent += `\n\n\\end{questions}\n\\end{document}`;
-    
-    // Afficher le LaTeX généré
-    showAMCStatus('📄 LaTeX généré avec succès!', 'success');
-    console.log('LaTeX généré:', latexContent);
-    
-    // Télécharger le fichier .tex
-    downloadLaTeXFile(latexContent, title);
-    
-    return latexContent;
-}
-
-// Télécharger le fichier LaTeX
-function downloadLaTeXFile(content, title) {
-    const blob = new Blob([content], { type: 'text/plain' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = `${title.replace(/[^a-z0-9]/gi, '_')}.tex`;
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
-}
-
-// Upload et préparation de l'examen
-async function prepareExam() {
-    if (!currentProjectId) {
-        const projectId = await createAMCProject();
-        if (!projectId) return;
+      latexContent += '\\end{document}';
+      currentLaTeXContent = latexContent;
+      return latexContent;
     }
-    
-    showAMCStatus('🔄 Préparation de l\'examen...', 'loading');
-    
-    // Ici vous devrez uploader le fichier .tex généré
-    // Pour l'instant, on simule avec un fichier existant
-    try {
-        const nCopies = document.getElementById('n-copies').value || 1;
-        const response = await fetch(`/api/projects/${currentProjectId}/prepare`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                tex_filename: 'exam.tex', // À adapter
-                n_copies: parseInt(nCopies)
-            })
+
+    // Fonction pour télécharger le fichier .tex
+    function downloadLaTeX() {
+      const latexContent = generateLaTeX();
+      const title = document.getElementById('exam-title').value || 'examen';
+      const filename = title.replace(/[^a-z0-9]/gi, '_').toLowerCase() + '.tex';
+      
+      const blob = new Blob([latexContent], { type: 'text/plain' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      
+      showAMCStatus('✅ Fichier .tex téléchargé !', 'success');
+    }
+
+    async function generateRealPDF() {
+      const projectId = getCurrentProjectId();
+      if (!projectId) {
+        showAMCStatus('❌ Aucun projet actif - Revenez à l\'accueil', 'error');
+        return;
+      }
+
+      try {
+        showAMCStatus('🔄 Génération du LaTeX...', 'loading');
+        const latexContent = generateLaTeX();
+        
+        console.log('LaTeX généré:', latexContent);
+        
+        showAMCStatus('📤 Upload du fichier...', 'loading');
+        const formData = new FormData();
+        const blob = new Blob([latexContent], { type: 'text/plain' });
+        
+        // CORRECTION : Utiliser test-exam.tex comme attendu par l'API
+        formData.append('source', blob, 'test-exam.tex');
+        
+        const uploadResponse = await fetch('/api/projects/' + projectId + '/source', {
+          method: 'POST',
+          body: formData
         });
         
-        const result = await response.json();
-        showAMCStatus('✅ Examen préparé! ' + result.log, 'success');
+        const uploadResult = await uploadResponse.json();
+        console.log('Upload result:', uploadResult);
         
-    } catch (error) {
-        showAMCStatus('❌ Erreur préparation: ' + error.message, 'error');
-    }
-}
-
-// Compiler le PDF
-async function compilePDF() {
-    if (!currentProjectId) {
-        showAMCStatus('❌ Créez d\'abord un projet', 'error');
-        return;
-    }
-    
-    showAMCStatus('🔄 Compilation PDF...', 'loading');
-    
-    try {
-        const response = await fetch(`/api/projects/${currentProjectId}/compile`, {
-            method: 'POST'
+        showAMCStatus('🔄 Compilation PDF...', 'loading');
+        const compileResponse = await fetch('/api/projects/' + projectId + '/compile', {
+          method: 'POST'
         });
         
-        const result = await response.json();
-        showAMCStatus('✅ PDF compilé! ' + result.log, 'success');
+        const result = await compileResponse.json();
+        console.log('Compile result:', result);
         
-    } catch (error) {
-        showAMCStatus('❌ Erreur compilation: ' + error.message, 'error');
-    }
-}
-
-// Télécharger le PDF
-async function downloadPDF() {
-    if (!currentProjectId) {
-        showAMCStatus('❌ Aucun projet actif', 'error');
-        return;
-    }
-    
-    try {
-        // Ouvrir le PDF dans un nouvel onglet
-        window.open(`/api/projects/${currentProjectId}/pdf/calage.pdf`, '_blank');
-        showAMCStatus('📄 Ouverture du PDF...', 'success');
+        if (result.pdf_created) {
+          showAMCStatus('✅ PDF généré avec succès !', 'success');
+          showDownloadButtons(projectId);
+        } else {
+          showAMCStatus('❌ Erreur compilation: ' + (result.log || 'Unknown error'), 'error');
+        }
         
-    } catch (error) {
-        showAMCStatus('❌ Erreur téléchargement: ' + error.message, 'error');
+      } catch (error) {
+        console.error('Erreur complète:', error);
+        showAMCStatus('❌ Erreur génération PDF: ' + error.message, 'error');
+      }
     }
-}
 
-// Afficher le statut AMC
-function showAMCStatus(message, type = 'info') {
-    const statusEl = document.getElementById('amc-status');
-    statusEl.textContent = message;
-    statusEl.style.color = 
+    function showDownloadButtons(projectId) {
+      const downloadContainer = document.getElementById('download-buttons');
+      downloadContainer.innerHTML = '';
+      downloadContainer.style.display = 'flex';
+      
+      // CORRECTION : Utiliser test-exam.pdf comme généré par l'API
+      const pdfBtn = document.createElement('a');
+      pdfBtn.href = '/api/projects/' + projectId + '/pdf/test-exam.pdf';
+      pdfBtn.target = '_blank';
+      pdfBtn.className = 'btn-success';
+      pdfBtn.textContent = '📥 Télécharger PDF';
+      pdfBtn.style.padding = '10px 15px';
+      pdfBtn.style.borderRadius = '8px';
+      pdfBtn.style.textDecoration = 'none';
+      pdfBtn.style.textAlign = 'center';
+      
+      // Bouton LaTeX
+      const texBtn = document.createElement('button');
+      texBtn.onclick = downloadLaTeX;
+      texBtn.className = 'btn-primary';
+      texBtn.textContent = '📄 Télécharger .tex';
+      texBtn.style.padding = '10px 15px';
+      texBtn.style.borderRadius = '8px';
+      texBtn.style.border = 'none';
+      texBtn.style.cursor = 'pointer';
+      
+      downloadContainer.appendChild(pdfBtn);
+      downloadContainer.appendChild(texBtn);
+    }
+
+    function showAMCStatus(message, type = 'info') {
+      const statusEl = document.getElementById('amc-status');
+      statusEl.textContent = message;
+      statusEl.style.color = 
         type === 'success' ? 'var(--success)' :
         type === 'error' ? 'var(--danger)' :
         type === 'loading' ? 'var(--primary)' : 'var(--text)';
-}
-
-// Initialisation au chargement
-document.addEventListener('DOMContentLoaded', function() {
-    // Créer un projet AMC au démarrage
-    setTimeout(() => createAMCProject(), 1000);
-});
-
+    }
   </script>
 </body>
 </html>

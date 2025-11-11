@@ -1,0 +1,742 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2025.11.10)  11 NOV 2025 12:26
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**test-exam.tex
+(./test-exam.tex
+LaTeX2e <2024-11-01> patch level 2
+L3 programming layer <2025-01-18>
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2024/06/29 v1.4n Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2024/06/29 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count196
+\c@section=\count197
+\c@subsection=\count198
+\c@subsubsection=\count199
+\c@paragraph=\count266
+\c@subparagraph=\count267
+\c@figure=\count268
+\c@table=\count269
+\abovecaptionskip=\skip49
+\belowcaptionskip=\skip50
+\bibindent=\dimen141
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2024/02/08 v1.3d Input encoding file
+\inpenc@prehook=\toks17
+\inpenc@posthook=\toks18
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
+)
+(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2025/02/14 v25.4 The multilingual framework for pdfLaTeX, LuaLaT
+eX and XeLaTeX
+\babel@savecnt=\count270
+\U@D=\dimen142
+\l@unhyphenated=\language5
+
+(/usr/share/texlive/texmf-dist/tex/generic/babel/txtbabel.def)
+\bbl@readstream=\read2
+\bbl@dirlevel=\count271
+
+(/usr/share/texlive/texmf-dist/tex/generic/babel-french/francais.ldf
+Language: francais 2024-07-25 v3.6c French support from the babel system
+
+
+Package francais.ldf Warning: Option `francais' for Babel is *deprecated*,
+(francais.ldf)                it might be removed sooner or later. Please
+(francais.ldf)                use `french' instead; reported on input line 31.
+
+(/usr/share/texlive/texmf-dist/tex/generic/babel-french/french.ldf
+Language: french 2024-07-25 v3.6c French support from the babel system
+Package babel Info: Hyphen rules for 'acadian' set to \l@french
+(babel)             (\language4). Reported on input line 91.
+Package babel Info: Hyphen rules for 'canadien' set to \l@french
+(babel)             (\language4). Reported on input line 92.
+\FB@stdchar=\count272
+Package babel Info: Making : an active character on input line 421.
+Package babel Info: Making ; an active character on input line 422.
+Package babel Info: Making ! an active character on input line 423.
+Package babel Info: Making ? an active character on input line 424.
+\FBguill@level=\count273
+\FBold@everypar=\toks19
+\FB@Mht=\dimen143
+\mc@charclass=\count274
+\mc@charfam=\count275
+\mc@charslot=\count276
+\std@mcc=\count277
+\dec@mcc=\count278
+\FB@parskip=\dimen144
+\listindentFB=\dimen145
+\descindentFB=\dimen146
+\labelindentFB=\dimen147
+\labelwidthFB=\dimen148
+\leftmarginFB=\dimen149
+\parindentFFN=\dimen150
+\FBfnindent=\dimen151
+)))
+(/usr/share/texlive/texmf-dist/tex/latex/carlisle/scalefnt.sty)
+(/usr/share/texmf/tex/latex/AMC/automultiplechoice.sty
+AMC version: 2025/04/17 v1.7.0 r:ec7413fa
+Package: automultiplechoice 2025/04/17 v1.7.0 r:ec7413fa
+(/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 274.
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2024/04/13 v1.2c Graphics/color driver for pdftex
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1349.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1353.
+Package xcolor Info: Model `RGB' extended on input line 1365.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1367.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1370.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1371.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
+
+\f@nch@headwidth=\skip51
+\f@nch@offset@elh=\skip52
+\f@nch@offset@erh=\skip53
+\f@nch@offset@olh=\skip54
+\f@nch@offset@orh=\skip55
+\f@nch@offset@elf=\skip56
+\f@nch@offset@erf=\skip57
+\f@nch@offset@olf=\skip58
+\f@nch@offset@orf=\skip59
+\f@nch@height=\skip60
+\f@nch@footalignment=\skip61
+\f@nch@widthL=\skip62
+\f@nch@widthC=\skip63
+\f@nch@widthR=\skip64
+\@temptokenb=\toks20
+)
+(/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
+
+(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks21
+\XKV@tempa@toks=\toks22
+
+(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/keyval.tex))
+\XKV@depth=\count279
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+))
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/rotating.sty
+Package: rotating 2016/08/11 v2.16d rotated objects in LaTeX
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2024/08/06 v1.4g Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 106.
+)
+\Gin@req@height=\dimen152
+\Gin@req@width=\dimen153
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
+)
+\c@r@tfl@t=\count280
+\rotFPtop=\skip65
+\rotFPbot=\skip66
+\rot@float@box=\box52
+\rot@mess@toks=\toks23
+)
+(/usr/share/texlive/texmf-dist/tex/latex/fancybox/fancybox.sty
+Package: fancybox 2010/05/15 1.4
+
+Style option: `fancybox' v1.4 <2010/05/15> (tvz)
+\@fancybox=\box53
+\shadowsize=\dimen154
+\@Sbox=\box54
+\do@VerbBox=\toks24
+\the@fancyput=\toks25
+\this@fancyput=\toks26
+\EndVerbatimTokens=\toks27
+\Verbatim@Outfile=\write3
+\Verbatim@Infile=\read3
+) (/usr/share/texlive/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2025-01-18 L3 programming layer (loader) 
+
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count281
+\l__pdf_internal_box=\box55
+))
+(/usr/share/texlive/texmf-dist/tex/latex/csvsimple/csvsimple.sty
+Package: csvsimple 2024/09/27 v2.7.0 LaTeX CSV file processing
+)
+(/usr/share/texlive/texmf-dist/tex/latex/csvsimple/csvsimple-legacy.sty
+Package: csvsimple-legacy 2024/09/27 version 2.7.0 LaTeX2e CSV file processing
+
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
+\pgfutil@everybye=\toks28
+\pgfutil@tempdima=\dimen155
+\pgfutil@tempdimb=\dimen156
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+\pgfutil@abb=\box56
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/pgf.revision.tex)
+Package: pgfrcs 2023-01-15 v3.1.10 (3.1.10)
+))
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks29
+\pgfkeys@temptoks=\toks30
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeyslibraryfiltered
+.code.tex
+\pgfkeys@tmptoks=\toks31
+))) (/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2025/02/11 v2.5l e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count282
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/shellesc.sty
+Package: shellesc 2023/07/08 v1.0d unified shell escape interface for LaTeX
+Package shellesc Info: Restricted shell escape enabled on input line 77.
+)
+\csv@file=\read4
+\c@csvinputline=\count283
+\c@csvrow=\count284
+\c@csvcol=\count285
+\csv@out=\write4
+)
+(/usr/share/texlive/texmf-dist/tex/latex/environ/environ.sty
+Package: environ 2014/05/04 v0.3 A new way to define environments
+
+(/usr/share/texlive/texmf-dist/tex/latex/trimspaces/trimspaces.sty
+Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
+)
+\@envbody=\toks32
+)
+\AMC@logfile=\write5
+\openout5 = `test-exam.amc'.
+
+\AMCload@counter=\count286
+\AMCid@quest=\count287
+\AMCid@check=\count288
+\AMCid@etud=\count289
+\AMCid@etudstart=\count290
+\AMCid@etudfin=\count291
+\AMCnum@copies=\count292
+\AMCformVSpace=\dimen157
+\AMCformHSpace=\dimen158
+\AMCinterIrep=\dimen159
+\AMCinterBrep=\dimen160
+\AMCinterIquest=\dimen161
+\AMCinterBquest=\dimen162
+\AMCpostNquest=\dimen163
+\AMCpostOquest=\dimen164
+\AMCids@width=\dimen165
+\AMCids@height=\dimen166
+\AMC@SR=\count293
+\AMC@SR@count=\count294
+\AMC@SRnum=\count295
+\AMC@sti=\count296
+\AMC@stil=\count297
+\AMCsw@p@=\toks33
+\AMC@numerotation=\count298
+\AMC@smashbox=\box57
+\AMC@smashboxheight=\dimen167
+\c@AMC@ncase=\count299
+\AMC@boxedrule=\skip67
+\AMC@crossrule=\skip68
+\AMC@boxeddown=\skip69
+\AMC@boxedwidth=\skip70
+\AMC@boxedheight=\skip71
+\AMC@oval@radius=\skip72
+\AMC@outside@sep=\skip73
+\AMC@CBtaille=\skip74
+\AMCbin@sequence=\toks34
+\AMCbin@number=\count300
+\AMCbin@digit=\count301
+\AMCbin@id=\count302
+\AMCbin@did=\count303
+\AMCbin@ndigits=\count304
+\AMCbin@hsep=\dimen168
+\AMCtok@k=\count305
+\AMCtok@max=\count306
+\AMCtok@size=\count307
+\AMC@imax=\count308
+\AMCtok@ik=\count309
+\AMCloop@k=\count310
+\AMCrep@count=\count311
+\AMCrep@nn=\count312
+\AMCrep@nnmax=\count313
+\reponse@cxcix=\toks35
+\reponse@cxcviii=\toks36
+\reponse@cxcvii=\toks37
+\reponse@cxcvi=\toks38
+\reponse@cxcv=\toks39
+\reponse@cxciv=\toks40
+\reponse@cxciii=\toks41
+\reponse@cxcii=\toks42
+\reponse@cxci=\toks43
+\reponse@cxc=\toks44
+\reponse@clxxxix=\toks45
+\reponse@clxxxviii=\toks46
+\reponse@clxxxvii=\toks47
+\reponse@clxxxvi=\toks48
+\reponse@clxxxv=\toks49
+\reponse@clxxxiv=\toks50
+\reponse@clxxxiii=\toks51
+\reponse@clxxxii=\toks52
+\reponse@clxxxi=\toks53
+\reponse@clxxx=\toks54
+\reponse@clxxix=\toks55
+\reponse@clxxviii=\toks56
+\reponse@clxxvii=\toks57
+\reponse@clxxvi=\toks58
+\reponse@clxxv=\toks59
+\reponse@clxxiv=\toks60
+\reponse@clxxiii=\toks61
+\reponse@clxxii=\toks62
+\reponse@clxxi=\toks63
+\reponse@clxx=\toks64
+\reponse@clxix=\toks65
+\reponse@clxviii=\toks66
+\reponse@clxvii=\toks67
+\reponse@clxvi=\toks68
+\reponse@clxv=\toks69
+\reponse@clxiv=\toks70
+\reponse@clxiii=\toks71
+\reponse@clxii=\toks72
+\reponse@clxi=\toks73
+\reponse@clx=\toks74
+\reponse@clix=\toks75
+\reponse@clviii=\toks76
+\reponse@clvii=\toks77
+\reponse@clvi=\toks78
+\reponse@clv=\toks79
+\reponse@cliv=\toks80
+\reponse@cliii=\toks81
+\reponse@clii=\toks82
+\reponse@cli=\toks83
+\reponse@cl=\toks84
+\reponse@cxlix=\toks85
+\reponse@cxlviii=\toks86
+\reponse@cxlvii=\toks87
+\reponse@cxlvi=\toks88
+\reponse@cxlv=\toks89
+\reponse@cxliv=\toks90
+\reponse@cxliii=\toks91
+\reponse@cxlii=\toks92
+\reponse@cxli=\toks93
+\reponse@cxl=\toks94
+\reponse@cxxxix=\toks95
+\reponse@cxxxviii=\toks96
+\reponse@cxxxvii=\toks97
+\reponse@cxxxvi=\toks98
+\reponse@cxxxv=\toks99
+\reponse@cxxxiv=\toks100
+\reponse@cxxxiii=\toks101
+\reponse@cxxxii=\toks102
+\reponse@cxxxi=\toks103
+\reponse@cxxx=\toks104
+\reponse@cxxix=\toks105
+\reponse@cxxviii=\toks106
+\reponse@cxxvii=\toks107
+\reponse@cxxvi=\toks108
+\reponse@cxxv=\toks109
+\reponse@cxxiv=\toks110
+\reponse@cxxiii=\toks111
+\reponse@cxxii=\toks112
+\reponse@cxxi=\toks113
+\reponse@cxx=\toks114
+\reponse@cxix=\toks115
+\reponse@cxviii=\toks116
+\reponse@cxvii=\toks117
+\reponse@cxvi=\toks118
+\reponse@cxv=\toks119
+\reponse@cxiv=\toks120
+\reponse@cxiii=\toks121
+\reponse@cxii=\toks122
+\reponse@cxi=\toks123
+\reponse@cx=\toks124
+\reponse@cix=\toks125
+\reponse@cviii=\toks126
+\reponse@cvii=\toks127
+\reponse@cvi=\toks128
+\reponse@cv=\toks129
+\reponse@civ=\toks130
+\reponse@ciii=\toks131
+\reponse@cii=\toks132
+\reponse@ci=\toks133
+\reponse@c=\toks134
+\reponse@xcix=\toks135
+\reponse@xcviii=\toks136
+\reponse@xcvii=\toks137
+\reponse@xcvi=\toks138
+\reponse@xcv=\toks139
+\reponse@xciv=\toks140
+\reponse@xciii=\toks141
+\reponse@xcii=\toks142
+\reponse@xci=\toks143
+\reponse@xc=\toks144
+\reponse@lxxxix=\toks145
+\reponse@lxxxviii=\toks146
+\reponse@lxxxvii=\toks147
+\reponse@lxxxvi=\toks148
+\reponse@lxxxv=\toks149
+\reponse@lxxxiv=\toks150
+\reponse@lxxxiii=\toks151
+\reponse@lxxxii=\toks152
+\reponse@lxxxi=\toks153
+\reponse@lxxx=\toks154
+\reponse@lxxix=\toks155
+\reponse@lxxviii=\toks156
+\reponse@lxxvii=\toks157
+\reponse@lxxvi=\toks158
+\reponse@lxxv=\toks159
+\reponse@lxxiv=\toks160
+\reponse@lxxiii=\toks161
+\reponse@lxxii=\toks162
+\reponse@lxxi=\toks163
+\reponse@lxx=\toks164
+\reponse@lxix=\toks165
+\reponse@lxviii=\toks166
+\reponse@lxvii=\toks167
+\reponse@lxvi=\toks168
+\reponse@lxv=\toks169
+\reponse@lxiv=\toks170
+\reponse@lxiii=\toks171
+\reponse@lxii=\toks172
+\reponse@lxi=\toks173
+\reponse@lx=\toks174
+\reponse@lix=\toks175
+\reponse@lviii=\toks176
+\reponse@lvii=\toks177
+\reponse@lvi=\toks178
+\reponse@lv=\toks179
+\reponse@liv=\toks180
+\reponse@liii=\toks181
+\reponse@lii=\toks182
+\reponse@li=\toks183
+\reponse@l=\toks184
+\reponse@xlix=\toks185
+\reponse@xlviii=\toks186
+\reponse@xlvii=\toks187
+\reponse@xlvi=\toks188
+\reponse@xlv=\toks189
+\reponse@xliv=\toks190
+\reponse@xliii=\toks191
+\reponse@xlii=\toks192
+\reponse@xli=\toks193
+\reponse@xl=\toks194
+\reponse@xxxix=\toks195
+\reponse@xxxviii=\toks196
+\reponse@xxxvii=\toks197
+\reponse@xxxvi=\toks198
+\reponse@xxxv=\toks199
+\reponse@xxxiv=\toks200
+\reponse@xxxiii=\toks201
+\reponse@xxxii=\toks202
+\reponse@xxxi=\toks203
+\reponse@xxx=\toks204
+\reponse@xxix=\toks205
+\reponse@xxviii=\toks206
+\reponse@xxvii=\toks207
+\reponse@xxvi=\toks208
+\reponse@xxv=\toks209
+\reponse@xxiv=\toks210
+\reponse@xxiii=\toks211
+\reponse@xxii=\toks212
+\reponse@xxi=\toks213
+\reponse@xx=\toks214
+\reponse@xix=\toks215
+\reponse@xviii=\toks216
+\reponse@xvii=\toks217
+\reponse@xvi=\toks218
+\reponse@xv=\toks219
+\reponse@xiv=\toks220
+\reponse@xiii=\toks221
+\reponse@xii=\toks222
+\reponse@xi=\toks223
+\reponse@x=\toks224
+\reponse@ix=\toks225
+\reponse@viii=\toks226
+\reponse@vii=\toks227
+\reponse@vi=\toks228
+\reponse@v=\toks229
+\reponse@iv=\toks230
+\reponse@iii=\toks231
+\reponse@ii=\toks232
+\reponse@i=\toks233
+\AMCnum@questions=\count314
+\AMCrep@@count=\count315
+\amc_memory_elts_count=\count316
+\c@AMC@specsi=\count317
+\AMC@coli=\count318
+\AMC@tf@ncols=\count319
+\AMCformTH=\dimen169
+\AMC@tfcolw=\dimen170
+\AMC@tfaw=\dimen171
+\AMC@tfbox=\box58
+\AMChorizAnswerSep=\skip75
+\AMChorizBoxSep=\skip76
+\AMC@mn@test=\skip77
+\AMC@mn@sep=\skip78
+\AMC@mn@leftmargin=\skip79
+\AMC@mn@rightmargin=\skip80
+\AMC@sz@width=\skip81
+\AMC@sz@height=\skip82
+\AMC@sz@depth=\skip83
+\AMC@sza@width=\skip84
+\AMC@sza@height=\skip85
+\AMC@sza@depth=\skip86
+\c@AMCquestionaff=\count320
+\ouverte@vs=\dimen172
+\AMC@chiffres=\count321
+\AMCcodeHspace=\dimen173
+\AMCcodeVspace=\dimen174
+\amc_code_digit_n_int=\count322
+\amc_multi_count_int=\count323
+\amc_num_exponent_int=\count324
+\amc_todigits_int=\count325
+\AMCnumeric@Hspace=\dimen175
+\AMCnumeric@Vspace=\dimen176
+\amc_num_ndigits_int=\count326
+\amc_num_decd_int=\count327
+\amc_num_expo_int=\count328
+\amc_num_base_int=\count329
+\amc_vheadunitindex_int=\count330
+\amc_num_exact_int=\count331
+\amc_num_approx_int=\count332
+\amc_num_digit_value_int=\count333
+\amc_num_first_digit_int=\count334
+\amc_num_digit_int=\count335
+\amc_num_sign_int=\count336
+\amc_num_expo_sign_int=\count337
+\amc_num_correct_expo_int=\count338
+\AMCopen@Hspace=\dimen177
+\AMCopen@LineHeight=\dimen178
+\AMCopen@Lines=\count339
+\AMCopen@boxmargin=\dimen179
+\AMCopen@boxframerule=\dimen180
+\AMCopen@framerule=\dimen181
+\AMC@addpages=\count340
+
+
+! LaTeX Error: Unknown option `auto' for package `automultiplechoice'.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.2550 \ifAMCneeds@storebox
+                           
+The option `auto' was not declared in package `automultiplechoice', perhaps you
+
+misspelled its name. Try typing  <return>  to proceed.
+
+(/usr/share/texlive/texmf-dist/tex/latex/etex-pkg/etex.sty
+Package: etex 2016/08/01 v2.7 eTeX basic definition package (PEB,DPC)
+
+
+Package etex Warning: Extended allocation already in use.
+(etex)                etex.sty code will not be used.
+(etex)                To force etex package to load, add
+(etex)                \RequirePackage{etex}
+(etex)                at the start of the document.
+
+) (/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2024/12/12 v1.0g TeX engine tests
+))
+\Gm@cnth=\count341
+\Gm@cntv=\count342
+\c@Gm@tempcnt=\count343
+\Gm@bindingoffset=\dimen182
+\Gm@wd@mp=\dimen183
+\Gm@odd@mp=\dimen184
+\Gm@even@mp=\dimen185
+\Gm@layoutwidth=\dimen186
+\Gm@layoutheight=\dimen187
+\Gm@layouthoffset=\dimen188
+\Gm@layoutvoffset=\dimen189
+\Gm@dimlist=\toks234
+))
+No file test-exam.aux.
+\openout1 = `test-exam.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+(/usr/share/texlive/texmf-dist/tex/generic/babel/locale/fr/babel-french.tex
+Package babel Info: Importing font and identification data for french
+(babel)             from babel-fr.ini. Reported on input line 11.
+)
+LaTeX Info: Redefining \degres on input line 7.
+LaTeX Info: Redefining \up on input line 7.
+
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count344
+\scratchdimen=\dimen190
+\scratchbox=\box59
+\nofMPsegments=\count345
+\nofMParguments=\count346
+\everyMPshowfont=\toks235
+\MPscratchCnt=\count347
+\MPscratchDim=\dimen191
+\MPnumerator=\count348
+\makeMPintoPDFobject=\count349
+\everyMPtoPDFconversion=\toks236
+) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+\AMC@ovalbox@R=\box60
+\AMC@ovalbox@RF=\box61
+\AMC@ovalbox@=\box62
+\AMC@ovalbox@F=\box63
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(85.35826pt, 426.79135pt, 85.35826pt)
+* v-part:(T,H,B)=(99.58464pt, 674.33032pt, 71.13188pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=426.79135pt
+* \textheight=674.33032pt
+* \oddsidemargin=13.08827pt
+* \evensidemargin=13.08827pt
+* \topmargin=-38.12675pt
+* \headheight=56.9055pt
+* \headsep=8.5359pt
+* \topskip=10.0pt
+* \footskip=28.45274pt
+* \marginparwidth=57.0pt
+* \marginparsep=11.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+\general@k=\count350
+\AMCgeneral@j=\count351
+\general@i=\toks237
+\general@ii=\toks238
+
+AMC:copies:total=5
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 43.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 43.
+
+
+[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf/fonts/en
+c/dvips/cm-super/cm-super-t1.enc}
+
+] 
+AMC:copies:add=1
+
+
+[1
+
+] 
+AMC:copies:add=1
+
+
+[1
+
+] 
+AMC:copies:add=1
+
+
+[1
+
+] 
+AMC:copies:add=1
+
+
+[1
+
+] 
+AMC:copies:add=1
+(./test-exam.aux)
+ ***********
+LaTeX2e <2024-11-01> patch level 2
+L3 programming layer <2025-01-18>
+ ***********
+ ) 
+Here is how much of TeX's memory you used:
+ 8474 strings out of 475149
+ 152808 string characters out of 5765269
+ 591375 words of memory out of 5000000
+ 31386 multiletter control sequences out of 15000+600000
+ 562528 words of font info for 42 fonts, out of 8000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 87i,23n,93p,311b,654s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/latxfont/lcircle1.pfb></usr/share/texm
+f/fonts/type1/public/cm-super/sfbx1000.pfb></usr/share/texmf/fonts/type1/public
+/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.p
+fb></usr/share/texmf/fonts/type1/public/cm-super/sftt1000.pfb>
+Output written on test-exam.pdf (5 pages, 104618 bytes).
+PDF statistics:
+ 61 PDF objects out of 1000 (max. 8388607)
+ 37 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+

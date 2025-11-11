@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="UTF-8">
     <title>AMC Platform</title>
@@ -12,7 +11,6 @@
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
         }
-
         .container {
             max-width: 1000px;
             margin: 0 auto;
@@ -20,85 +18,87 @@
             color: white;
             text-align: center;
         }
-
         h1 {
             font-size: 3em;
             margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
-
         .subtitle {
             font-size: 1.2em;
             margin-bottom: 40px;
             opacity: 0.9;
         }
-
         .card-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
             margin-top: 40px;
         }
-
         .card {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255,255,255,0.1);
             backdrop-filter: blur(10px);
             padding: 30px;
             border-radius: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255,255,255,0.2);
             transition: transform 0.3s ease;
             cursor: pointer;
         }
-
         .card:hover {
             transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(255,255,255,0.15);
         }
-
         .card h3 {
             margin-top: 0;
             font-size: 1.5em;
         }
-
         .status {
             margin-top: 30px;
             padding: 15px;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255,255,255,0.1);
             border-radius: 10px;
             display: inline-block;
         }
+        .pdf-status {
+            margin-top: 15px;
+            padding: 10px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 8px;
+            font-size: 14px;
+        }
     </style>
 </head>
-
 <body>
     <div class="container">
         <h1>🚀 AMC Platform</h1>
-        <div class="subtitle">
-            Plateforme de création et correction automatique de QCM
-        </div>
+        <div class="subtitle">Plateforme de création et correction automatique de QCM</div>
 
         <div class="card-grid">
             <div class="card" onclick="showExamCreator()">
                 <h3>📝 Créer un Examen</h3>
                 <p>Créez un nouveau QCM avec interface intuitive</p>
             </div>
-
             <div class="card" onclick="showExamsList()">
                 <h3>📋 Mes Examens</h3>
                 <p>Gérez vos examens existants</p>
             </div>
-
             <div class="card" onclick="showCorrection()">
                 <h3>📊 Corriger</h3>
                 <p>Corrigez automatiquement les copies scannées</p>
             </div>
-
             <div class="card" onclick="showResults()">
                 <h3>📈 Résultats</h3>
                 <p>Analysez les statistiques et performances</p>
             </div>
         </div>
 
+        <p style="margin-top:40px;">
+            <a href="#" id="view-pdf-btn" target="_blank" class="btn"
+               style="background:#fff;color:#333;padding:10px 20px;border-radius:8px;text-decoration:none;font-weight:bold;display:none;">
+                📄 Voir un exemple PDF
+            </a>
+        </p>
+
+        <div class="pdf-status" id="pdf-status">🔄 Préparation...</div>
         <div class="status" id="status">🔄 Vérification de la connexion...</div>
     </div>
 
@@ -107,17 +107,16 @@
         fetch('/api/health')
             .then(r => r.json())
             .then(data => {
-                document.getElementById('status').innerHTML =
-                    '✅ Backend connecté - ' + data.status;
+                document.getElementById('status').innerHTML = '✅ Backend connecté - ' + data.status;
             })
             .catch(err => {
-                document.getElementById('status').innerHTML =
-                    '❌ Erreur de connexion au backend';
+                document.getElementById('status').innerHTML = '❌ Erreur de connexion au backend';
             });
 
-        // Fonctions pour les boutons (à implémenter)
+        let currentProjectId = null;
+
         function showExamCreator() {
-            window.location.href = '/exam-creator.html';
+            createProjectForExamCreator();
         }
 
         function showExamsList() {
@@ -131,7 +130,55 @@
         function showResults() {
             alert('📊 Résultats - À implémenter !');
         }
+
+        async function createProjectForExamCreator() {
+            try {
+                document.getElementById('pdf-status').innerHTML = '🔄 Création du projet...';
+                
+                if (!currentProjectId) {
+                    const response = await fetch('/api/projects', { method: 'POST' });
+                    const data = await response.json();
+                    currentProjectId = data.project_id;
+                    localStorage.setItem('currentProjectId', currentProjectId);
+                }
+                
+                document.getElementById('pdf-status').innerHTML = '✅ Redirection...';
+                
+                setTimeout(() => {
+                    window.location.href = '/exam-creator.html';
+                }, 500);
+                
+            } catch (error) {
+                document.getElementById('pdf-status').innerHTML = '❌ Erreur création projet';
+            }
+        }
+
+        function updatePDFButton(projectId) {
+            const pdfBtn = document.getElementById('view-pdf-btn');
+            if (pdfBtn && projectId) {
+                pdfBtn.style.display = 'inline-block';
+                pdfBtn.href = '/api/projects/' + projectId + '/pdf/calage.pdf';
+                pdfBtn.textContent = '📄 Voir un exemple PDF';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(async () => {
+                try {
+                    document.getElementById('pdf-status').innerHTML = '🔄 Préparation...';
+                    const response = await fetch('/api/projects', { method: 'POST' });
+                    const data = await response.json();
+                    currentProjectId = data.project_id;
+                    localStorage.setItem('currentProjectId', currentProjectId);
+                    
+                    updatePDFButton(currentProjectId);
+                    document.getElementById('pdf-status').innerHTML = '✅ Prêt ! Cliquez sur "Créer un Examen"';
+                    
+                } catch (error) {
+                    document.getElementById('pdf-status').innerHTML = '❌ Erreur préparation';
+                }
+            }, 1000);
+        });
     </script>
 </body>
-
 </html>

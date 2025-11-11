@@ -75,30 +75,55 @@ async def prepare(project_id: str, tex_filename: str = Form(...), n_copies: int 
 async def compile_pdf(project_id: str):
     proj_dir = os.path.join(AMC_DATA_DIR, project_id)
     
-    # CORRECTION : Compiler SANS l'extension .tex
-    log = run(f"xelatex -interaction=nonstopmode test-exam_filtered", cwd=proj_dir)
-    
-    # Vérifier si le PDF a été créé
-    pdf_path = os.path.join(proj_dir, "test-exam_filtered.pdf")
-    if os.path.exists(pdf_path):
-        return JSONResponse({"log": log, "pdf_created": True})
-    else:
-        # Si pas de PDF, vérifier les fichiers générés
-        all_files = "\n".join(os.listdir(proj_dir))
-        raise HTTPException(500, f"PDF non généré. Fichiers présents:\n{all_files}")
+    # CORRECTION : Compiler le fichier test-exam.tex avec pdflatex
+    try:
+        log = run(f"pdflatex -interaction=nonstopmode test-exam.tex", cwd=proj_dir)
+        
+        # Vérifier si le PDF a été créé
+        pdf_path = os.path.join(proj_dir, "test-exam.pdf")
+        if os.path.exists(pdf_path):
+            return JSONResponse({"log": log, "pdf_created": True})
+        else:
+            # Essayer avec une autre extension au cas où
+            pdf_path_alt = os.path.join(proj_dir, "test-exam.tex.pdf")
+            if os.path.exists(pdf_path_alt):
+                # Renommer le fichier
+                os.rename(pdf_path_alt, pdf_path)
+                return JSONResponse({"log": log, "pdf_created": True})
+            else:
+                # Debug: lister les fichiers
+                all_files = "\n".join(os.listdir(proj_dir))
+                raise HTTPException(500, f"PDF non généré. Fichiers présents:\n{all_files}")
+                
+    except HTTPException as e:
+        # Si pdflatex échoue, essayer xelatex
+        try:
+            log = run(f"xelatex -interaction=nonstopmode test-exam.tex", cwd=proj_dir)
+            pdf_path = os.path.join(proj_dir, "test-exam.pdf")
+            if os.path.exists(pdf_path):
+                return JSONResponse({"log": "xelatex: " + log, "pdf_created": True})
+            else:
+                raise e
+        except:
+            raise e
 
 @app.get("/projects/{project_id}/pdf/{name}")
 async def get_pdf(project_id: str, name: str):
     proj_dir = os.path.join(AMC_DATA_DIR, project_id)
     
-    # Si name est "calage.pdf", servir le PDF compilé
-    if name == "calage.pdf":
+    # CORRECTION : Servir le bon fichier PDF selon le nom demandé
+    if name == "test-exam.pdf":
+        pdf_path = os.path.join(proj_dir, "test-exam.pdf")
+    elif name == "calage.pdf":
+        # Essayer d'abord test-exam_filtered.pdf, puis test-exam.pdf
         pdf_path = os.path.join(proj_dir, "test-exam_filtered.pdf")
+        if not os.path.exists(pdf_path):
+            pdf_path = os.path.join(proj_dir, "test-exam.pdf")
     else:
         pdf_path = os.path.join(proj_dir, name)
         
     if not (os.path.exists(pdf_path) and pdf_path.endswith(".pdf")):
-        raise HTTPException(404, "PDF non trouvé")
+        raise HTTPException(404, f"PDF non trouvé: {pdf_path}")
     return FileResponse(pdf_path, media_type="application/pdf")
 
 @app.post("/projects/{project_id}/scans")

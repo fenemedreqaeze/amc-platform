@@ -17,3 +17,5 @@ services:
       - api
     ports:
       - "3000:80"
+    volumes:
+      - ./frontend/src:/usr/share/nginx/html:ro  # 👈 LIVE UPDATE SANS REBUILD
