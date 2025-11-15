@@ -1,21 +1,37 @@
 services:
   api:
     build: ./api
-    container_name: amc-api
+    container_name: api
+    ports: ["8000:8000"]
+    environment:
+      - AMC_RUNNER_URL=http://amc-runner:8001
+      - CORS_ORIGINS=https://${CODESPACE_NAME}-3000.app.github.dev,http://localhost:3000
+    volumes:
+      - ./api:/app                   # live-reload API
+    working_dir: /app
+    command: uvicorn app:app --host 0.0.0.0 --port 8000 --reload
+    restart: unless-stopped
+
+  amc-runner:
+    image: manios/auto-multiple-choice:latest
+    container_name: amc-runner
     environment:
       - AMC_DATA_DIR=/amc/data
-      - CORS_ORIGINS=https://${CODESPACE_NAME}-3000.app.github.dev,https://${CODESPACE_NAME}-8000.app.github.dev,http://localhost:3000
     volumes:
-      - ./data:/amc/data
-    ports:
-      - "8000:8000"
+      - ./data:/amc/data            # stockage projets/PDF
+    command: sh -lc "python3 -m http.server 8001"  # placeholder (tu mettras un mini serveur AMC ensuite)
+    expose: ["8001"]
+    restart: unless-stopped
 
   frontend:
     build: ./frontend
-    container_name: amc-frontend
-    depends_on:
-      - api
-    ports:
-      - "3000:80"
+    container_name: frontend
+    depends_on: [api]
+    ports: ["3000:80"]
     volumes:
-      - ./frontend/src:/usr/share/nginx/html:ro  # 👈 LIVE UPDATE SANS REBUILD
+      - ./frontend/src:/usr/share/nginx/html:ro    # live update HTML/JS/CSS
+    restart: unless-stopped
+
+networks:
+  default:
+    name: amc-network

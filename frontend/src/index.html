@@ -92,10 +92,19 @@
         </div>
 
         <p style="margin-top:40px;">
-            <a href="#" id="view-pdf-btn" target="_blank" class="btn"
-               style="background:#fff;color:#333;padding:10px 20px;border-radius:8px;text-decoration:none;font-weight:bold;display:none;">
-                📄 Voir un exemple PDF
-            </a>
+<a id="view-pdf-btn"
+   href="#"
+   style="display:none;
+          margin-top:20px;
+          background:#fff;
+          color:#111827;
+          padding:10px 16px;
+          border-radius:10px;
+          text-decoration:none;
+          font-weight:600;
+          display:none;">
+  📄 Voir le PDF de l'examen
+</a>
         </p>
 
         <div class="pdf-status" id="pdf-status">🔄 Préparation...</div>
@@ -113,11 +122,17 @@
                 document.getElementById('status').innerHTML = '❌ Erreur de connexion au backend';
             });
 
-        let currentProjectId = null;
+        let currentProjectId = localStorage.getItem('currentProjectId');
 
         function showExamCreator() {
-            createProjectForExamCreator();
-        }
+             if (currentProjectId) {
+        // Projet déjà prêt -> on va direct sur le créateur
+        window.location.href = '/exam-creator.html';
+            } else {
+        // Pas encore de projet -> on le crée puis on redirige
+        createProjectForExamCreator();
+            }
+}
 
         function showExamsList() {
             alert('📋 Liste des examens - À implémenter !');
@@ -153,32 +168,46 @@
             }
         }
 
-        function updatePDFButton(projectId) {
-            const pdfBtn = document.getElementById('view-pdf-btn');
-            if (pdfBtn && projectId) {
-                pdfBtn.style.display = 'inline-block';
-                pdfBtn.href = '/api/projects/' + projectId + '/pdf/calage.pdf';
-                pdfBtn.textContent = '📄 Voir un exemple PDF';
-            }
-        }
+async function updatePDFButton(projectId) {
+  const pdfBtn = document.getElementById('view-pdf-btn');
+  if (!pdfBtn || !projectId) return;
 
-        document.addEventListener('DOMContentLoaded', function() {
-            setTimeout(async () => {
-                try {
-                    document.getElementById('pdf-status').innerHTML = '🔄 Préparation...';
-                    const response = await fetch('/api/projects', { method: 'POST' });
-                    const data = await response.json();
-                    currentProjectId = data.project_id;
-                    localStorage.setItem('currentProjectId', currentProjectId);
-                    
-                    updatePDFButton(currentProjectId);
-                    document.getElementById('pdf-status').innerHTML = '✅ Prêt ! Cliquez sur "Créer un Examen"';
-                    
-                } catch (error) {
-                    document.getElementById('pdf-status').innerHTML = '❌ Erreur préparation';
-                }
-            }, 1000);
-        });
+  try {
+    // Demander à l’API la liste des PDFs du projet
+    const res = await fetch('/api/projects/' + projectId + '/pdfs');
+    const pdfList = await res.json();
+
+    // Vérifie que la liste existe et qu'il y a au moins 1 PDF
+    if (pdfList && Array.isArray(pdfList) && pdfList.length > 0) {
+      const pdfName = pdfList[0];  // On prend le premier PDF trouvé
+
+      // Met à jour automatiquement l’URL sans nom en dur
+      pdfBtn.href = '/api/projects/' + projectId + '/pdf/' + pdfName;
+      pdfBtn.textContent = '📄 Voir le PDF : ' + pdfName;
+      pdfBtn.style.display = 'inline-block';
+    } else {
+      pdfBtn.style.display = 'none';
+    }
+
+  } catch (err) {
+    console.error('Erreur récupération PDF:', err);
+    pdfBtn.style.display = 'none';
+  }
+}
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    if (currentProjectId) {
+        // On a déjà un projet → on met à jour le bouton PDF et le statut
+        updatePDFButton(currentProjectId);
+        document.getElementById('pdf-status').innerHTML =
+            '✅ Projet rechargé : ' + currentProjectId;
+    } else {
+        // Pas encore de projet
+        document.getElementById('pdf-status').innerHTML =
+            'ℹ️ Cliquez sur "Créer un Examen" pour créer un projet';
+    }
+});
     </script>
 </body>
 </html>
