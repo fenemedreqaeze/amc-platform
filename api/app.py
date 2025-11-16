@@ -22,18 +22,36 @@ app.add_middleware(
 
 AMC_BIN = "auto-multiple-choice"
 
+
 def run(cmd: str, cwd: str | None = None):
-    p = subprocess.run(shlex.split(cmd), cwd=cwd,
-                       stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
+    p = subprocess.run(
+        shlex.split(cmd),
+        cwd=cwd,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.STDOUT,
+        text=True,
+    )
     if p.returncode != 0:
         raise HTTPException(500, p.stdout)
     return p.stdout
 
+
+# -------------------------------------------------------------------
+# Santé / Health
+# -------------------------------------------------------------------
+
 @app.get("/health")
+@app.get("/api/health")
 async def health():
     return {"status": "ok"}
 
+
+# -------------------------------------------------------------------
+# Projets
+# -------------------------------------------------------------------
+
 @app.post("/projects")
+@app.post("/api/projects")
 async def create_project(project_id: str | None = Form(None)):
     pid = project_id or uuid.uuid4().hex[:8]
     proj_dir = os.path.join(AMC_DATA_DIR, pid)
@@ -42,7 +60,9 @@ async def create_project(project_id: str | None = Form(None)):
     os.chmod(proj_dir, 0o777)
     return {"project_id": pid}
 
+
 @app.post("/projects/{project_id}/source")
+@app.post("/api/projects/{project_id}/source")
 async def upload_source(project_id: str, source: UploadFile = File(...)):
     proj_dir = os.path.join(AMC_DATA_DIR, project_id)
     if not os.path.isdir(proj_dir):
@@ -52,33 +72,44 @@ async def upload_source(project_id: str, source: UploadFile = File(...)):
         shutil.copyfileobj(source.file, f)
     return {"saved": os.path.basename(dst)}
 
+
 @app.post("/projects/{project_id}/prepare")
-async def prepare(project_id: str, tex_filename: str = Form(...), n_copies: int = Form(1)):
+@app.post("/api/projects/{project_id}/prepare")
+async def prepare(
+    project_id: str,
+    tex_filename: str = Form(...),
+    n_copies: int = Form(1),
+):
     proj_dir = os.path.join(AMC_DATA_DIR, project_id)
     tex_path = os.path.join(proj_dir, tex_filename)
     if not os.path.exists(tex_path):
         raise HTTPException(400, "tex not found")
-    
+
     # CRÉER TOUS LES DOSSIERS AVEC PERMISSIONS
     data_dir = os.path.join(proj_dir, "data")
     os.makedirs(data_dir, exist_ok=True)
     os.chmod(data_dir, 0o777)
-    
-    amc_data_dir = os.path.join(proj_dir, tex_filename.replace('.tex', '-data'))
+
+    amc_data_dir = os.path.join(proj_dir, tex_filename.replace(".tex", "-data"))
     os.makedirs(amc_data_dir, exist_ok=True)
     os.chmod(amc_data_dir, 0o777)
-    
-    log = run(f"{AMC_BIN} prepare --project {proj_dir} --with pdflatex --n-copies {n_copies} --filter plain --source {tex_path}")
+
+    log = run(
+        f"{AMC_BIN} prepare --project {proj_dir} "
+        f"--with pdflatex --n-copies {n_copies} --filter plain --source {tex_path}"
+    )
     return JSONResponse({"log": log})
 
+
 @app.post("/projects/{project_id}/compile")
+@app.post("/api/projects/{project_id}/compile")
 async def compile_pdf(project_id: str):
     proj_dir = os.path.join(AMC_DATA_DIR, project_id)
-    
-    # CORRECTION : Compiler le fichier test-exam.tex avec pdflatex
+
+    # Compiler le fichier test-exam.tex avec pdflatex, comme attendu par le frontend
     try:
-        log = run(f"pdflatex -interaction=nonstopmode test-exam.tex", cwd=proj_dir)
-        
+        log = run("pdflatex -interaction=nonstopmode test-exam.tex", cwd=proj_dir)
+
         # Vérifier si le PDF a été créé
         pdf_path = os.path.join(proj_dir, "test-exam.pdf")
         if os.path.exists(pdf_path):
@@ -93,12 +124,14 @@ async def compile_pdf(project_id: str):
             else:
                 # Debug: lister les fichiers
                 all_files = "\n".join(os.listdir(proj_dir))
-                raise HTTPException(500, f"PDF non généré. Fichiers présents:\n{all_files}")
-                
+                raise HTTPException(
+                    500, f"PDF non généré. Fichiers présents:\n{all_files}"
+                )
+
     except HTTPException as e:
         # Si pdflatex échoue, essayer xelatex
         try:
-            log = run(f"xelatex -interaction=nonstopmode test-exam.tex", cwd=proj_dir)
+            log = run("xelatex -interaction=nonstopmode test-exam.tex", cwd=proj_dir)
             pdf_path = os.path.join(proj_dir, "test-exam.pdf")
             if os.path.exists(pdf_path):
                 return JSONResponse({"log": "xelatex: " + log, "pdf_created": True})
@@ -107,11 +140,27 @@ async def compile_pdf(project_id: str):
         except:
             raise e
 
+
+@app.get("/projects/{project_id}/pdfs")
+@app.get("/api/projects/{project_id}/pdfs")
+async def list_pdfs(project_id: str):
+    """
+    Liste des PDFs du projet.
+    Utilisé par index.html : GET /api/projects/{projectId}/pdfs
+    """
+    proj_dir = os.path.join(AMC_DATA_DIR, project_id)
+    if not os.path.isdir(proj_dir):
+        raise HTTPException(404, "project not found")
+    pdfs = [f for f in os.listdir(proj_dir) if f.lower().endswith(".pdf")]
+    return pdfs
+
+
 @app.get("/projects/{project_id}/pdf/{name}")
+@app.get("/api/projects/{project_id}/pdf/{name}")
 async def get_pdf(project_id: str, name: str):
     proj_dir = os.path.join(AMC_DATA_DIR, project_id)
-    
-    # CORRECTION : Servir le bon fichier PDF selon le nom demandé
+
+    # Servir le bon fichier PDF selon le nom demandé
     if name == "test-exam.pdf":
         pdf_path = os.path.join(proj_dir, "test-exam.pdf")
     elif name == "calage.pdf":
@@ -121,12 +170,14 @@ async def get_pdf(project_id: str, name: str):
             pdf_path = os.path.join(proj_dir, "test-exam.pdf")
     else:
         pdf_path = os.path.join(proj_dir, name)
-        
+
     if not (os.path.exists(pdf_path) and pdf_path.endswith(".pdf")):
         raise HTTPException(404, f"PDF non trouvé: {pdf_path}")
     return FileResponse(pdf_path, media_type="application/pdf")
 
+
 @app.post("/projects/{project_id}/scans")
+@app.post("/api/projects/{project_id}/scans")
 async def upload_scans(project_id: str, scans: list[UploadFile] = File(...)):
     proj_dir = os.path.join(AMC_DATA_DIR, project_id)
     scans_dir = os.path.join(proj_dir, "scans")
@@ -136,29 +187,47 @@ async def upload_scans(project_id: str, scans: list[UploadFile] = File(...)):
         dst = os.path.join(scans_dir, uf.filename)
         with open(dst, "wb") as f:
             shutil.copyfileobj(uf.file, f)
-    log = run(f"{AMC_BIN} capture --project {proj_dir} --detect-barcodes --progress --copies-dir {scans_dir}")
+    log = run(
+        f"{AMC_BIN} capture --project {proj_dir} "
+        f"--detect-barcodes --progress --copies-dir {scans_dir}"
+    )
     return {"log": log, "count": len(scans)}
 
+
 @app.post("/projects/{project_id}/grade")
+@app.post("/api/projects/{project_id}/grade")
 async def grade(project_id: str):
     proj_dir = os.path.join(AMC_DATA_DIR, project_id)
     log = run(f"{AMC_BIN} score --project {proj_dir} --strategy auto")
     return JSONResponse({"log": log})
 
+
 @app.get("/projects/{project_id}/export/grades.csv")
+@app.get("/api/projects/{project_id}/export/grades.csv")
 async def export_grades(project_id: str):
     proj_dir = os.path.join(AMC_DATA_DIR, project_id)
     out_csv = os.path.join(proj_dir, "grades.csv")
-    log = run(f"{AMC_BIN} export --project {proj_dir} --format CSV --o {out_csv}")
+    log = run(
+        f"{AMC_BIN} export --project {proj_dir} "
+        f"--format CSV --o {out_csv}"
+    )
     if not os.path.exists(out_csv):
         raise HTTPException(500, "export failed")
     return FileResponse(out_csv, media_type="text/csv", filename="grades.csv")
 
-# -------- Monétisation simple (Stripe Checkout) --------
+
+# -------------------------------------------------------------------
+# Monétisation simple (Stripe Checkout)
+# -------------------------------------------------------------------
+
 @app.post("/billing/checkout")
+@app.post("/api/billing/checkout")
 async def create_checkout_session():
     if not stripe.api_key or not PRICE_ID_PRO:
-        raise HTTPException(400, "Stripe non configuré (STRIPE_SECRET_KEY / STRIPE_PRICE_ID_PRO)")
+        raise HTTPException(
+            400,
+            "Stripe non configuré (STRIPE_SECRET_KEY / STRIPE_PRICE_ID_PRO)",
+        )
     session = stripe.checkout.Session.create(
         mode="subscription",
         line_items=[{"price": PRICE_ID_PRO, "quantity": 1}],
@@ -169,13 +238,19 @@ async def create_checkout_session():
     )
     return {"url": session.url}
 
+
 @app.post("/webhooks/stripe")
+@app.post("/api/webhooks/stripe")
 async def stripe_webhook(request: Request):
     payload = await request.body()
     sig = request.headers.get("stripe-signature")
     endpoint_secret = os.getenv("STRIPE_WEBHOOK_SECRET", "")
     try:
-        event = stripe.Webhook.construct_event(payload, sig, endpoint_secret) if endpoint_secret else {"type": "noop"}
+        event = (
+            stripe.Webhook.construct_event(payload, sig, endpoint_secret)
+            if endpoint_secret
+            else {"type": "noop"}
+        )
     except Exception as e:
         raise HTTPException(400, str(e))
     # if event["type"] == "checkout.session.completed": activer l'abonnement
