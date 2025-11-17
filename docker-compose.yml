@@ -6,8 +6,10 @@ services:
     environment:
       - AMC_RUNNER_URL=http://amc-runner:8001
       - CORS_ORIGINS=https://${CODESPACE_NAME}-3000.app.github.dev,http://localhost:3000
+      - AMC_DATA_DIR=/amc/data         # (optionnel mais propre)
     volumes:
-      - ./api:/app                   # live-reload API
+      - ./api:/app
+      - ./data:/amc/data               # ✅ ajouter ceci
     working_dir: /app
     command: uvicorn app:app --host 0.0.0.0 --port 8000 --reload
     restart: unless-stopped
@@ -18,8 +20,8 @@ services:
     environment:
       - AMC_DATA_DIR=/amc/data
     volumes:
-      - ./data:/amc/data            # stockage projets/PDF
-    command: sh -lc "python3 -m http.server 8001"  # placeholder (tu mettras un mini serveur AMC ensuite)
+      - ./data:/amc/data
+    command: sh -lc "while true; do sleep 3600; done"
     expose: ["8001"]
     restart: unless-stopped
 
